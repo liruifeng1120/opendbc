@@ -104,8 +104,8 @@ class CarInterface(CarInterfaceBase):
 
         use_experimental_long = candidate in EXP_LONG_CAR
 
-        ret.experimentalLongitudinalAvailable = use_experimental_long
-        ret.openpilotLongitudinalControl = experimental_long and ret.experimentalLongitudinalAvailable
+        ret.alphaLongitudinalAvailable = use_experimental_long
+        ret.openpilotLongitudinalControl = experimental_long and ret.alphaLongitudinalAvailable
 
         ret.longitudinalTuning.kpBP, ret.longitudinalTuning.kiBP = [[0.],  [0.]]
         ret.longitudinalTuning.kpV,  ret.longitudinalTuning.kiV  = [[1.5], [0.3]]
