@@ -7,7 +7,8 @@ import numpy as np
 #from openpilot.common.time_helpers import system_time_valid
 #from openpilot.common.swaglog import cloudlog
 
-from opendbc.can import CANDefine, CANParser
+from opendbc.can.can_define import CANDefine
+from opendbc.can.parser import CANParser
 
 from opendbc.car.common.conversions import Conversions as CV
 #from opendbc.car.common.numpy_fast import mean
@@ -21,8 +22,8 @@ BYD_RADAR = os.getenv("BYD_RADAR") is not None
 ButtonType = structs.CarState.ButtonEvent.Type
 
 class CarState(CarStateBase):
-    def __init__(self, CP, CP_SP):
-        super().__init__(CP, CP_SP)
+    def __init__(self, CP):
+        super().__init__(CP)
 
         can_define = CANDefine(DBC[CP.carFingerprint][Bus.pt])
 
@@ -71,19 +72,18 @@ class CarState(CarStateBase):
 
 
 
-    def update(self, can_parsers) -> tuple[structs.CarState, structs.CarStateSP]:
+    def update(self, can_parsers) -> structs.CarState: # type: ignore
         cp = can_parsers[Bus.pt]
         cp_cam = can_parsers[Bus.cam]
 
         ret = structs.CarState()
-        ret_sp = structs.CarStateSP()
 
         self.lkas_prepared = cp.vl["ACC_EPS_STATE"]["LKAS_Prepared"]
 
         self.mpc_lkas_config = int(cp_cam.vl["ACC_MPC_STATE"]["LKAS_Config"])
         lkas_config_isAccOn = (self.mpc_lkas_config != LKASConfig.DISABLE)
         lkas_isMainSwOn = bool(cp.vl["PCM_BUTTONS"]["BTN_TOGGLE_ACC_OnOff"])
-
+        self.lkas_isMainSwOn = bool(cp.vl["PCM_BUTTONS"]["BTN_TOGGLE_ACC_OnOff"])
         lkas_hud_AccOn1 = bool(cp_cam.vl["ACC_HUD_ADAS"]["AccOn1"])
         self.acc_state  = cp_cam.vl["ACC_HUD_ADAS"]["AccState"]
         self.adas_set_dist = cp_cam.vl["ACC_HUD_ADAS"]["SetDistance"]
@@ -162,13 +162,14 @@ class CarState(CarStateBase):
         ret.doorOpen = any([cp.vl["BCM"]["FrontLeftDoor"], cp.vl["BCM"]["FrontRightDoor"],
                             cp.vl["BCM"]["RearLeftDoor"],  cp.vl["BCM"]["RearRightDoor"]])
 
-        ret.gasPressed = (int(cp.vl["PEDAL"]["AcceleratorPedal"]) > 0)
+        ret.gas = int(cp.vl["PEDAL"]["AcceleratorPedal"])
+        ret.gasPressed = (ret.gas > 0)
 
         ret.cruiseState.available = lkas_isMainSwOn and lkas_config_isAccOn and lkas_hud_AccOn1
         ret.cruiseState.enabled = self.acc_state in (3, 5)
         ret.cruiseState.standstill = ret.standstill
         ret.cruiseState.speed = cp_cam.vl["ACC_HUD_ADAS"]["SetSpeed"] * CV.KPH_TO_MS
-
+        ret.latEnabled = self.lkas_isMainSwOn and self.lkas_allowed_speed
         #Todo: some firmware have these fields asserted.
         ret.steerFaultTemporary = bool((self.acc_state == 7) or self.eps_warning)
 
@@ -192,7 +193,10 @@ class CarState(CarStateBase):
 
             if mrr_id == 2: #1:left, 2:front, 3:right
                 if bool(cp_cam.vl["RADAR_MRR"]["IsValid"]):
-                    self.mrr_leading_dist = int(cp_cam.vl["RADAR_MRR"]["LongDist"])
+                    raw_dist = int(cp_cam.vl["RADAR_MRR"]["LongDist"])
+                    # 增加距离滤波，避免异常值导致误判
+                    if 3 < raw_dist < 200:
+                        self.mrr_leading_dist = raw_dist
                 else:
                     self.mrr_leading_dist = 199
 
@@ -224,11 +228,11 @@ class CarState(CarStateBase):
             *create_button_events(self.btn_acc_dist_dec, prev_btn_acc_dist_dec, {1: ButtonType.gapAdjustCruise}),
         ]
 
-        return ret, ret_sp
+        return ret
 
 
     @staticmethod
-    def get_can_parsers(CP, CP_SP):
+    def get_can_parsers(CP):
         pt_messages = [
             # sig_address, frequency
             ("EPS", 100),

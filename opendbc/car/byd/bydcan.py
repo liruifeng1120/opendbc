@@ -93,7 +93,7 @@ def acc_cmd(packer, CP, cam_msg: dict, mrr_leaddist, accel, rfss, sss, longActiv
         jerk_upper = jerk_base_upper + accel * CarControllerParams.K_accel_jerk_upper
         jerk_lower = jerk_base_lower
 
-    if longActive :
+    if longActive and mrr_leaddist > 3:  # 增加最小距离检查
         values.update({
             "AccelCmd" : accel,
             "ComfortBandUpper" : 0.05 if mrr_leaddist > 50 else 0.10,

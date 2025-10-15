@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 from math import exp
 
-from opendbc.car import get_safety_config, structs
+from opendbc.car import get_safety_config, get_friction, structs
 from opendbc.car.common.conversions import Conversions as CV
-from opendbc.car.interfaces import CarInterfaceBase, TorqueFromLateralAccelCallbackType
-from opendbc.sunnypilot.car.interfaces import LatControlInputs
+from opendbc.car.interfaces import CarInterfaceBase, TorqueFromLateralAccelCallbackType, FRICTION_THRESHOLD, LatControlInputs
 from opendbc.car.byd.values import CAR, CanBus, BydSafetyFlags, MPC_ACC_CAR, TORQUE_LAT_CAR, EXP_LONG_CAR, \
                                 PLATFORM_HANTANG_DMEV, PLATFORM_TANG_DMI, PLATFORM_SONG_PLUS_DMI, PLATFORM_QIN_PLUS_DMI, PLATFORM_YUAN_PLUS_DMI_ATTO3
 from opendbc.car.byd.carcontroller import CarController
@@ -18,7 +17,8 @@ NetworkLocation = structs.CarParams.NetworkLocation
 
 NON_LINEAR_TORQUE_PARAMS = {
   CAR.BYD_HAN_DM_20: [1.807, 1.674, 0.04],
-  CAR.BYD_HAN_EV_20: [1.807, 1.674, 0.04]
+  CAR.BYD_HAN_EV_20: [1.807, 1.674, 0.04],
+  CAR.BYD_SONG_PLUS_DMI_21: [1.807, 1.674, 0.04]
 }
 
 import os
@@ -30,7 +30,8 @@ class CarInterface(CarInterfaceBase):
     RadarInterface = RadarInterface
 
     def torque_from_lateral_accel_siglin(self, latcontrol_inputs: LatControlInputs, torque_params: structs.CarParams.LateralTorqueTuning,
-                                         gravity_adjusted: bool) -> float:
+                                    lateral_accel_error: float, lateral_accel_deadzone: float, friction_compensation: bool, gravity_adjusted: bool) -> float:
+        friction = get_friction(lateral_accel_error, lateral_accel_deadzone, FRICTION_THRESHOLD, torque_params, friction_compensation)
 
         def sig(val):
             # https://timvieira.github.io/blog/post/2014/02/11/exp-normalize-trick
@@ -47,7 +48,7 @@ class CarInterface(CarInterfaceBase):
         assert non_linear_torque_params, "The params are not defined"
         a, b, c = non_linear_torque_params
         steer_torque = (sig(latcontrol_inputs.lateral_acceleration * a) * b) + (latcontrol_inputs.lateral_acceleration * c)
-        return float(steer_torque)
+        return float(steer_torque) + friction
 
     def torque_from_lateral_accel(self) -> TorqueFromLateralAccelCallbackType:
         if self.CP.carFingerprint in NON_LINEAR_TORQUE_PARAMS:
@@ -56,7 +57,7 @@ class CarInterface(CarInterfaceBase):
             return self.torque_from_lateral_accel_linear
 
     @staticmethod
-    def _get_params(ret: structs.CarParams, candidate, fingerprint, car_fw, experimental_long, is_release, docs) -> structs.CarParams: # type: ignore
+    def _get_params(ret: structs.CarParams, candidate, fingerprint, car_fw, experimental_long, docs) -> structs.CarParams: # type: ignore
         ret.brand = "byd"
         ret.safetyConfigs = [get_safety_config(structs.CarParams.SafetyModel.byd)]
 
@@ -112,7 +113,7 @@ class CarInterface(CarInterfaceBase):
 
         # model specific parameters
         # Todo: Developers please fill or add more models.
-        if candidate in (CAR.BYD_HAN_DM_20, CAR.BYD_HAN_EV_20, CAR.BYD_TANG_DM, CAR.BYD_SONG_PLUS_DMI_21):
+        if candidate in (CAR.BYD_HAN_DM_20, CAR.BYD_HAN_EV_20, CAR.BYD_TANG_DM, CAR.BYD_SONG_PLUS_DMI_21, CAR.BYD_TANG_DMI_21, CAR.BYD_SONG_PLUS_DMI_22, CAR.BYD_SONG_PLUS_DMI_23, CAR.BYD_SONG_PRO_DMI_22, CAR.BYD_QIN_PLUS_DMI_23, CAR.BYD_YUAN_PLUS_DMI_22):
             ret.minSteerSpeed = 0
             ret.autoResumeSng = True
             ret.startingState = True

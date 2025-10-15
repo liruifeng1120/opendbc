@@ -146,9 +146,18 @@ MPC_ACC_CAR = {CAR.BYD_HAN_DM_20, CAR.BYD_HAN_EV_20, CAR.BYD_TANG_DM}
 PT_RADAR_CAR = {CAR.BYD_HAN_DM_20, CAR.BYD_HAN_EV_20, CAR.BYD_TANG_DM}
 
 # use torque lat control, otherwise use angle mode
-TORQUE_LAT_CAR = {CAR.BYD_HAN_DM_20, CAR.BYD_HAN_EV_20, CAR.BYD_TANG_DM}
+TORQUE_LAT_CAR = {CAR.BYD_HAN_DM_20, CAR.BYD_HAN_EV_20, CAR.BYD_TANG_DM, CAR.BYD_SONG_PLUS_DMI_21}
 
 # use experimental long mode
-EXP_LONG_CAR = {CAR.BYD_HAN_DM_20, CAR.BYD_HAN_EV_20, CAR.BYD_TANG_DM}
+EXP_LONG_CAR = {CAR.BYD_HAN_DM_20, CAR.BYD_HAN_EV_20, CAR.BYD_TANG_DM, CAR.BYD_SONG_PLUS_DMI_21}
 
 DBC = CAR.create_dbc_map()
+
+if __name__ == "__main__":
+  cars = []
+  for platform in CAR:
+    for doc in platform.config.car_docs:
+      cars.append(doc.name)
+  cars.sort()
+  for c in cars:
+    print(c)
