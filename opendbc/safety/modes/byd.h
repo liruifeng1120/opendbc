@@ -24,7 +24,35 @@
 
 static bool byd_eps_cruiseactivated = false;
 
+// CRC 多项式和查找表（用于 CAN-FD CRC 计算）
+#ifndef BYD_CANFD_CRC_POLY
+#define BYD_CANFD_CRC_POLY 0x2F
+#endif
+
+static uint8_t byd_crc_lut[256];
+
+// ---------------------------------------------------------------------------
+// Minimal placeholder definitions for RX checks and TX message lists.
+// These should be replaced with full definitions matching the vehicle's CAN layout.
+// Added as a minimal compile-time fix so the safety module builds.
+// ---------------------------------------------------------------------------
+
+// Provide minimal, type-correct placeholders compatible with safety_declarations.h
+// These contain a single zero-initialized entry so sizeof(...) works and code compiles.
+static RxCheck byd_seal_rx_checks[] = { { { {0} }, {0} } };
+
+static RxCheck byd_handm_rx_checks[] = { { { {0} }, {0} } };
+
+static const CanMsg BYD_SEAL_TX_MSGS[] = {
+  { .addr = 0, .bus = 0, .len = 0, .check_relay = false, .disable_static_blocking = false }
+};
+
+static const CanMsg BYD_HANDM_TX_MSGS[] = {
+  { .addr = 0, .bus = 0, .len = 0, .check_relay = false, .disable_static_blocking = false }
+};
+
 typedef enum {
+  UNDETERMINED,
   HAN_TANG_DMEV,
   TANG_DMI,
   SONG_PLUS_DMI,
@@ -158,7 +186,7 @@ static bool byd_fwd_hook(int bus, int addr) {
     block_msg = (addr == BYD_CANADDR_ACC_CMD) ||
                 (addr == BYD_CANADDR_PCM_BUTTONS);
   }
-  
+
   // 如果block_msg为true，则阻止消息转发
   return block_msg;
 }
@@ -168,7 +196,7 @@ static safety_config byd_init(uint16_t param) {
   byd_platform = UNDETERMINED;
   gen_crc_lookup_table_8(BYD_CANFD_CRC_POLY, byd_crc_lut);
   safety_config ret;
-  
+
   if (byd_platform == SEAL) {
     ret = (safety_config){
       .rx_checks = byd_seal_rx_checks,
@@ -184,7 +212,7 @@ static safety_config byd_init(uint16_t param) {
       .tx_msgs_len = sizeof(BYD_HANDM_TX_MSGS) / sizeof(BYD_HANDM_TX_MSGS[0]),
     };
   }
-  
+
   return ret;
 }
 
