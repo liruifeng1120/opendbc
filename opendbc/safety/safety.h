@@ -6,6 +6,9 @@
 #include "opendbc/safety/safety_declarations.h"
 #include "opendbc/safety/board/can.h"
 
+// Forward declaration of generic_rx_checks to fix compilation errors
+static void generic_rx_checks(void);
+
 // all the safety modes
 #include "opendbc/safety/modes/defaults.h"
 #include "opendbc/safety/modes/honda.h"
