@@ -64,7 +64,11 @@ static void byd_rx_hook(const CANPacket_t *to_push) {
       //empty
     }
 
-    generic_rx_checks(addr == BYD_CANADDR_ACC_MPC_STATE);
+    // 移除这一行错误的调用
+    // generic_rx_checks(addr == BYD_CANADDR_ACC_MPC_STATE);
+
+    // 改为正确的调用方式
+    generic_rx_checks();
 
   } else if (bus == BYD_CANBUS_MPC) {
     if (addr == BYD_CANADDR_ACC_HUD_ADAS) {
@@ -87,11 +91,11 @@ static void byd_rx_hook(const CANPacket_t *to_push) {
 static bool byd_tx_hook(const CANPacket_t *to_send) {
   // 转向限制配置
   const TorqueSteeringLimits BYD_HANDM_STEERING_LIMITS = {
-    .max_steer = 300,                     // 最大转向值
+    .max_torque = 300,                     // 最大转向值
     .max_rate_up = 18,                    // 最大上升率
     .max_rate_down = 18,                  // 最大下降率
     .max_rt_delta = 243,                  // 最大实时变化 = 18 * 250/20 = 225 + 18 =
-    .max_rt_interval = 250000,            // 最大实时间隔 = 250ms
+    .min_valid_request_rt_interval = 250000,            // 最大实时间隔 = 250ms
     .max_torque_error = 80,               // motor torque limits
     .type = TorqueMotorLimited,           // 限制类型
   };
