@@ -146,83 +146,45 @@ static bool byd_tx_hook(const CANPacket_t *to_send) {
   return tx;
 }
 
-static int byd_fwd_hook(int bus, int addr) {
-  int bus_fwd = -1; // 初始化转发总线为-1
+// fwd_hook类型定义为: typedef bool (*fwd_hook)(int bus_num, int addr);
+// 返回true表示应该阻止消息转发，返回false表示允许转发
+static bool byd_fwd_hook(int bus, int addr) {
+  bool block_msg = false; // 默认不阻止
 
-  if (bus == BYD_CANBUS_ESC) { // if sent from esc
-    bool block_esc_msg = (addr == BYD_CANADDR_ACC_EPS_STATE)
-                      || (addr == BYD_CANADDR_ACC_EPS_STATE_SEAL);
-
-    if (!block_esc_msg) {
-      bus_fwd = BYD_CANBUS_MPC;
-    }
-  } else if (bus == BYD_CANBUS_MPC) { // if sent from mpc
-    bool block_mpc_msg = (addr == BYD_CANADDR_ACC_MPC_STATE)
-                      || (addr == BYD_CANADDR_ACC_MPC_STATE_SEAL)
-                      || (addr == BYD_CANADDR_ACC_CMD);
-
-    if (!block_mpc_msg) {
-      bus_fwd = BYD_CANBUS_ESC;
-    }
+  if (bus == BYD_CANBUS_ESC) { // 从 ESC 发出的消息
+    block_msg = (addr == BYD_CANADDR_ACC_EPS_STATE) ||
+                (addr == BYD_CANADDR_ACC_EPS_STATE_SEAL);
+  } else if (bus == BYD_CANBUS_MPC) { // 从 MPC 发出的消息
+    block_msg = (addr == BYD_CANADDR_ACC_CMD) ||
+                (addr == BYD_CANADDR_PCM_BUTTONS);
   }
-
-  return bus_fwd;
+  
+  // 如果block_msg为true，则阻止消息转发
+  return block_msg;
 }
 
-
 static safety_config byd_init(uint16_t param) {
-  // const uint32_t FLAG_TANG_DMI = 0x2U;
-  // const uint32_t FLAG_SONG_PLUS_DMI = 0x4U;
-  // const uint32_t FLAG_QIN_PLUS_DMI = 0x8U;
-  // const uint32_t FLAG_YUAN_PLUS_DMI_ATTO3 = 0x10U;
-  const uint32_t FLAG_SEAL = 0x20U;
-
+  UNUSED(param);
+  byd_platform = UNDETERMINED;
+  gen_crc_lookup_table_8(BYD_CANFD_CRC_POLY, byd_crc_lut);
   safety_config ret;
-
-  static RxCheck byd_handm_rx_checks[] = {
-    {.msg = {{BYD_CANADDR_PEDAL,          BYD_CANBUS_ESC, 8, .ignore_checksum = true, .ignore_counter = true, .frequency = 50U}, { 0 }, { 0 }}},
-    {.msg = {{BYD_CANADDR_CARSPEED,       BYD_CANBUS_ESC, 8, .ignore_checksum = true, .ignore_counter = true, .frequency = 50U}, { 0 }, { 0 }}},
-    {.msg = {{BYD_CANADDR_ACC_EPS_STATE,  BYD_CANBUS_ESC, 8, .ignore_checksum = true, .ignore_counter = true, .frequency = 50U}, { 0 }, { 0 }}},
-    {.msg = {{BYD_CANADDR_ACC_HUD_ADAS,   BYD_CANBUS_MPC, 8, .ignore_checksum = true, .ignore_counter = true, .frequency = 50U}, { 0 }, { 0 }}},
-    {.msg = {{BYD_CANADDR_ACC_MPC_STATE,  BYD_CANBUS_MPC, 8, .ignore_checksum = true, .ignore_counter = true, .frequency = 50U}, { 0 }, { 0 }}},
-  };
-
-  static RxCheck byd_seal_rx_checks[] = {
-    {.msg = {{BYD_CANADDR_PEDAL,              BYD_CANBUS_ESC, 8, .ignore_checksum = true, .ignore_counter = true, .frequency = 50U}, { 0 }, { 0 }}},
-    {.msg = {{BYD_CANADDR_CARSPEED,           BYD_CANBUS_ESC, 8, .ignore_checksum = true, .ignore_counter = true, .frequency = 50U}, { 0 }, { 0 }}},
-    {.msg = {{BYD_CANADDR_ACC_EPS_STATE_SEAL, BYD_CANBUS_ESC, 8, .ignore_checksum = true, .ignore_counter = true, .frequency = 50U}, { 0 }, { 0 }}},
-    {.msg = {{BYD_CANADDR_ACC_HUD_ADAS,       BYD_CANBUS_MPC, 8, .ignore_checksum = true, .ignore_counter = true, .frequency = 50U}, { 0 }, { 0 }}},
-    {.msg = {{BYD_CANADDR_ACC_MPC_STATE,      BYD_CANBUS_MPC, 8, .ignore_checksum = true, .ignore_counter = true, .frequency = 50U}, { 0 }, { 0 }}},
-    {.msg = {{BYD_CANADDR_ACC_MPC_STATE_SEAL, BYD_CANBUS_MPC, 8, .ignore_checksum = true, .ignore_counter = true, .frequency = 50U}, { 0 }, { 0 }}},
-  };
-
-  static const CanMsg BYD_HANDM_TX_MSGS[] = {
-    {BYD_CANADDR_ACC_CMD,         BYD_CANBUS_ESC, 8},
-    {BYD_CANADDR_ACC_MPC_STATE,   BYD_CANBUS_ESC, 8},
-    {BYD_CANADDR_ACC_EPS_STATE,   BYD_CANBUS_MPC, 8},
-  };
-
-  static const CanMsg BYD_SEAL_TX_MSGS[] = {
-    {BYD_CANADDR_ACC_CMD,            BYD_CANBUS_ESC, 8},
-    {BYD_CANADDR_ACC_MPC_STATE,      BYD_CANBUS_ESC, 8},
-    {BYD_CANADDR_ACC_MPC_STATE_SEAL, BYD_CANBUS_ESC, 8},
-    {BYD_CANADDR_ACC_EPS_STATE_SEAL, BYD_CANBUS_MPC, 8},
-  };
-
-  // bool use_han_dm = GET_FLAG(param, FLAG_HAN_TANG_DMEV); this is default option
-  // bool use_tang_dmi = GET_FLAG(param, FLAG_TANG_DMI);
-  // bool use_song = GET_FLAG(param, FLAG_SONG_PLUS_DMI);
-  // bool use_qin = GET_FLAG(param, FLAG_QIN_PLUS_DMI);
-  bool use_seal = GET_FLAG(param, FLAG_SEAL);
-
-  if (use_seal) {
-    byd_platform = SEAL;
-    ret = BUILD_SAFETY_CFG(byd_seal_rx_checks, BYD_SEAL_TX_MSGS);
+  
+  if (byd_platform == SEAL) {
+    ret = (safety_config){
+      .rx_checks = byd_seal_rx_checks,
+      .rx_checks_len = sizeof(byd_seal_rx_checks) / sizeof(byd_seal_rx_checks[0]),
+      .tx_msgs = BYD_SEAL_TX_MSGS,
+      .tx_msgs_len = sizeof(BYD_SEAL_TX_MSGS) / sizeof(BYD_SEAL_TX_MSGS[0]),
+    };
   } else {
-    byd_platform = HAN_TANG_DMEV;
-    ret = BUILD_SAFETY_CFG(byd_handm_rx_checks, BYD_HANDM_TX_MSGS);
+    ret = (safety_config){
+      .rx_checks = byd_handm_rx_checks,
+      .rx_checks_len = sizeof(byd_handm_rx_checks) / sizeof(byd_handm_rx_checks[0]),
+      .tx_msgs = BYD_HANDM_TX_MSGS,
+      .tx_msgs_len = sizeof(BYD_HANDM_TX_MSGS) / sizeof(BYD_HANDM_TX_MSGS[0]),
+    };
   }
-
+  
   return ret;
 }
 
