@@ -2,6 +2,10 @@
 
 #include "opendbc/safety/safety_declarations.h"
 
+// 添加缺失的宏定义
+#define GET_BUS(msg) (((msg)->bus) & 0x3U)
+#define GET_BYTE(msg, i) ((msg)->data[(i)])
+
 // 需要处理的CAN消息定义
 #define BYD_CANADDR_IPB               0x1F0
 #define BYD_CANADDR_ACC_MPC_STATE     0x316
