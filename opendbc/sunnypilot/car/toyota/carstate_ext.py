@@ -46,6 +46,23 @@ class CarStateExt:
     self._tsgn4 = None
     self._splsgn4 = None
 
+  def _init_traffic_signals(self):
+    """Compatibility initializer so older/other code that calls
+    `self._init_traffic_signals()` (e.g., CarState.__init__) won't fail.
+
+    This mirrors the traffic signal attributes initialized in __init__.
+    """
+    # Set the same default values as the constructor
+    self._tsgn1 = None
+    self._spdval1 = None
+    self._splsgn1 = None
+    self._tsgn2 = None
+    self._splsgn2 = None
+    self._tsgn3 = None
+    self._splsgn3 = None
+    self._tsgn4 = None
+    self._splsgn4 = None
+
   @staticmethod
   def traffic_signal_description(tsgn):
     """Get description for traffic signal code"""
