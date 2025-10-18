@@ -13,7 +13,22 @@ from opendbc.sunnypilot.car.toyota.values import ToyotaFlagsSP
 
 ButtonType = structs.CarState.ButtonEvent.Type
 SteerControlType = structs.CarParams.SteerControlType
-AccelPersonality = custom.LongitudinalPlanSP.AccelerationPersonality
+
+# 修复AccelerationPersonality导入问题
+try:
+    # 尝试从custom.LongitudinalPlanSP导入AccelerationPersonality
+    AccelPersonality = custom.LongitudinalPlanSP.AccelerationPersonality
+except AttributeError:
+    # 如果无法导入，则从vibe_personality导入
+    try:
+        from selfdrive.controls.lib.vibe_personality.vibe_personality import AccelPersonality
+    except ImportError:
+        # 最后的备选方案，手动定义枚举值
+        class AccelPersonality:
+            eco = 0
+            normal = 1
+            sport = 2
+
 # These steering fault definitions seem to be common across LKA (torque) and LTA (angle):
 # - high steer rate fault: goes to 21 or 25 for 1 frame, then 9 for 2 seconds
 # - lka/lta msg drop out: goes to 9 then 11 for a combined total of 2 seconds, then 3.
