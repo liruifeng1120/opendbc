@@ -1,7 +1,7 @@
 import math
 import numpy as np
 from dataclasses import dataclass
-from opendbc.car import structs, rate_limit, DT_CTRL
+from opendbc.car import structs, DT_CTRL
 from opendbc.car.vehicle_model import VehicleModel
 
 FRICTION_THRESHOLD = 0.3

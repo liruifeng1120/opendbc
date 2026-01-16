@@ -665,6 +665,106 @@
     ],
     "package": "Adaptive Cruise Control with Lane Centering"
   },
+  "BYD Han DM 20": {
+    "platform": "BYD_HAN_DM_20",
+    "make": "BYD",
+    "brand": "byd",
+    "model": "Han DM",
+    "year": [
+      "2020"
+    ],
+    "package": "All"
+  },
+  "BYD Han EV 20": {
+    "platform": "BYD_HAN_EV_20",
+    "make": "BYD",
+    "brand": "byd",
+    "model": "Han EV",
+    "year": [
+      "2020"
+    ],
+    "package": "All"
+  },
+  "BYD Tang DM": {
+    "platform": "BYD_TANG_DM",
+    "make": "BYD",
+    "brand": "byd",
+    "model": "Tang DM",
+    "year": [
+      "2021"
+    ],
+    "package": "All"
+  },
+  "BYD Tang DMI 21": {
+    "platform": "BYD_TANG_DMI_21",
+    "make": "BYD",
+    "brand": "byd",
+    "model": "Tang DMI",
+    "year": [
+      "2021"
+    ],
+    "package": "All"
+  },
+  "BYD Song Plus DMI 21": {
+    "platform": "BYD_SONG_PLUS_DMI_21",
+    "make": "BYD",
+    "brand": "byd",
+    "model": "Song Plus DMI",
+    "year": [
+      "2021"
+    ],
+    "package": "All"
+  },
+  "BYD Song Plus DMI 22": {
+    "platform": "BYD_SONG_PLUS_DMI_22",
+    "make": "BYD",
+    "brand": "byd",
+    "model": "Song Plus DMI",
+    "year": [
+      "2022"
+    ],
+    "package": "All"
+  },
+  "BYD Song Plus DMI 23": {
+    "platform": "BYD_SONG_PLUS_DMI_23",
+    "make": "BYD",
+    "brand": "byd",
+    "model": "Song Plus DMI",
+    "year": [
+      "2023"
+    ],
+    "package": "All"
+  },
+  "BYD Song Pro DMI 22": {
+    "platform": "BYD_SONG_PRO_DMI_22",
+    "make": "BYD",
+    "brand": "byd",
+    "model": "Song Pro DMI",
+    "year": [
+      "2022"
+    ],
+    "package": "All"
+  },
+  "BYD Qin Plus DMI 23": {
+    "platform": "BYD_QIN_PLUS_DMI_23",
+    "make": "BYD",
+    "brand": "byd",
+    "model": "Qin Plus DMI",
+    "year": [
+      "2023"
+    ],
+    "package": "All"
+  },
+  "BYD Yuan Plus DMI 22": {
+    "platform": "BYD_YUAN_PLUS_DMI_22",
+    "make": "BYD",
+    "brand": "byd",
+    "model": "Yuan Plus DMI",
+    "year": [
+      "2022"
+    ],
+    "package": "All"
+  },
   "Genesis G70 2018": {
     "platform": "GENESIS_G70",
     "make": "Genesis",

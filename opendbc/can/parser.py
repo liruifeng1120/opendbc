@@ -263,3 +263,7 @@ class CANDefine:
       dv[msgname][sgname] = dv[address][sgname]
 
     self.dv = dict(dv)
+
+
+# 为了与原始导入语句兼容，同时导出 CANParser 和 CANDefine
+assert CANParser, CANDefine
