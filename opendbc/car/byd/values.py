@@ -8,7 +8,7 @@ from opendbc.car.fw_query_definitions import FwQueryConfig, Request, StdQueries
 Ecu = CarParams.Ecu
 
 class CarControllerParams:
-  STEER_MAX = 300
+  STEER_MAX = 250
   STEER_DELTA_UP = 7
   STEER_DELTA_DOWN = 10
 

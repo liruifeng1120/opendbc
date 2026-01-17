@@ -19,7 +19,8 @@ NON_LINEAR_TORQUE_PARAMS = {
   CAR.BYD_HAN_DM_20: [1.807, 1.674, 0.04],
   CAR.BYD_HAN_EV_20: [1.807, 1.674, 0.04],
   CAR.BYD_SONG_PLUS_DMI_21: [1.807, 1.674, 0.04],
-  CAR.BYD_SONG_PLUS_DMI_22: [0.8, 0.30, 0.07]
+  CAR.BYD_SONG_PLUS_DMI_22: [1.807, 1.674, 0.04],
+  CAR.BYD_SONG_PRO_DMI_22: [1.807, 1.674, 0.04]
 }
 class CarInterface(CarInterfaceBase):
   CarState = CarState
@@ -54,7 +55,8 @@ class CarInterface(CarInterfaceBase):
       return self.torque_from_lateral_accel_linear
 
   @staticmethod
-  def _get_params(ret: structs.CarParams, candidate, fingerprint, car_fw, experimental_long, docs) -> structs.CarParams: # type: ignore
+  def _get_params(ret: structs.CarParams, candidate, fingerprint: dict[int, dict[int, int]],
+                  car_fw: list[structs.CarParams.CarFw], alpha_long: bool, is_release: bool, docs: bool) -> structs.CarParams: # type: ignore
     ret.brand = "byd"
     ret.safetyConfigs = [get_safety_config(structs.CarParams.SafetyModel.byd)]
 
@@ -94,20 +96,20 @@ class CarInterface(CarInterfaceBase):
     else:
       ret.lateralTuning.init('pid')
       ret.lateralTuning.pid.kpBP, ret.lateralTuning.pid.kiBP = [[8.3 , 27.8], [8.3 , 27.8]]
-      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV   = [[0.6 ,  0.3], [0.2 ,  0.1]]
-      ret.lateralTuning.pid.kf = 0.000072
+      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV   = [[0.4 ,  0.2], [0.15 ,  0.08]]
+      ret.lateralTuning.pid.kf = 0.00005
 
     use_experimental_long = candidate in EXP_LONG_CAR
 
-    ret.experimentalLongitudinalAvailable = use_experimental_long
-    ret.openpilotLongitudinalControl = experimental_long and ret.experimentalLongitudinalAvailable
+    # indicate whether experimental longitudinal is supported and enable if requested
+    ret.openpilotLongitudinalControl = alpha_long and use_experimental_long
 
     ret.longitudinalTuning.kpBP, ret.longitudinalTuning.kiBP = [[0.],  [0.]]
     ret.longitudinalTuning.kpV,  ret.longitudinalTuning.kiV  = [[1.5], [0.3]]
 
     # model specific parameters
     # Todo: Developers please fill or add more models.
-    if candidate in (CAR.BYD_HAN_DM_20, CAR.BYD_HAN_EV_20, CAR.BYD_TANG_DM):
+    if candidate in (CAR.BYD_HAN_DM_20, CAR.BYD_HAN_EV_20, CAR.BYD_TANG_DM, CAR.BYD_SONG_PLUS_DMI_21, CAR.BYD_TANG_DMI_21, CAR.BYD_SONG_PLUS_DMI_22, CAR.BYD_SONG_PLUS_DMI_23, CAR.BYD_SONG_PRO_DMI_22, CAR.BYD_QIN_PLUS_DMI_23, CAR.BYD_YUAN_PLUS_DMI_22):
       ret.minSteerSpeed = 0
       ret.autoResumeSng = True
       ret.startingState = True

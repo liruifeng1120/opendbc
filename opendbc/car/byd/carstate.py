@@ -19,8 +19,8 @@ from opendbc.car.byd.values import DBC, CanBus, LKASConfig, CarControllerParams
 ButtonType = structs.CarState.ButtonEvent.Type
 
 class CarState(CarStateBase):
-  def __init__(self, CP):
-    super().__init__(CP)
+  def __init__(self, CP, CP_SP):
+    super().__init__(CP, CP_SP)
 
     can_define = CANDefine(DBC[CP.carFingerprint][Bus.pt])
 
@@ -69,11 +69,12 @@ class CarState(CarStateBase):
 
 
 
-  def update(self, can_parsers) -> structs.CarState: # type: ignore
+  def update(self, can_parsers) -> tuple[structs.CarState, structs.CarStateSP]: # type: ignore
     cp = can_parsers[Bus.pt]
     cp_cam = can_parsers[Bus.cam]
 
     ret = structs.CarState()
+    ret_sp = structs.CarStateSP()
 
     self.lkas_prepared = cp.vl["ACC_EPS_STATE"]["LKAS_Prepared"]
 
@@ -152,13 +153,12 @@ class CarState(CarStateBase):
     ret.brake =  int(cp.vl["PEDAL"]["BrakePedal"])
     ret.brakePressed = (ret.brake != 0)
 
-    ret.seatbeltUnlatched = (cp.vl["BCM"]["DriverSeatBeltFasten"] != 1)
-
+    ret.seatbeltUnlatched = False
     ret.doorOpen = any([cp.vl["BCM"]["FrontLeftDoor"], cp.vl["BCM"]["FrontRightDoor"],
               cp.vl["BCM"]["RearLeftDoor"],  cp.vl["BCM"]["RearRightDoor"]])
 
-    ret.gas = int(cp.vl["PEDAL"]["AcceleratorPedal"])
-    ret.gasPressed = (ret.gas != 0)
+    accel = int(cp.vl["PEDAL"]["AcceleratorPedal"])
+    ret.gasPressed = (accel != 0)
 
     ret.cruiseState.available = lkas_isMainSwOn and lkas_config_isAccOn and lkas_hud_AccOn1
     ret.cruiseState.enabled = self.acc_state in (3, 5)
@@ -219,11 +219,11 @@ class CarState(CarStateBase):
       *create_button_events(self.btn_acc_dist_dec, prev_btn_acc_dist_dec, {1: ButtonType.gapAdjustCruise}),
     ]
 
-    return ret
+    return ret, ret_sp
 
 
   @staticmethod
-  def get_can_parsers(CP):
+  def get_can_parsers(CP, CP_SP):
     pt_messages = [
       # sig_address, frequency
       ("EPS", 100),
