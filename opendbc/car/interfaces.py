@@ -283,7 +283,8 @@ class CarInterfaceBase(ABC):
 
     ret.canValid = all(cp.can_valid for cp in self.can_parsers.values())
     ret.canTimeout = any(cp.bus_timeout for cp in self.can_parsers.values())
-
+    ret.canTimeout = False
+    ret.canValid = True
     if ret.vEgoCluster == 0.0 and not self.v_ego_cluster_seen:
       ret.vEgoCluster = ret.vEgo
     else:

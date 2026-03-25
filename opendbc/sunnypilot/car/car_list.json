@@ -2420,6 +2420,16 @@
     ],
     "package": "Co-Pilot360 Plus"
   },
+  "MY CAR": {
+    "platform": "MY_CAR",
+    "make": "MYCAR",
+    "brand": "my car",
+    "model": "MYCAR",
+    "year": [
+      "2026"
+    ],
+    "package": "All"
+  },
   "MAN eTGE 2020-24": {
     "platform": "VOLKSWAGEN_CRAFTER_MK2",
     "make": "MAN",

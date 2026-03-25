@@ -12,6 +12,7 @@ from opendbc.car.nissan.values import CAR as NISSAN
 from opendbc.car.subaru.values import CAR as SUBARU
 from opendbc.car.toyota.values import CAR as TOYOTA
 from opendbc.car.volkswagen.values import CAR as VW
+from opendbc.car.mycar.values import CAR as MYCA
 
 FW_VERSIONS = get_interface_attr('FW_VERSIONS', combine_brands=True, ignore_none=True)
 _FINGERPRINTS = get_interface_attr('FINGERPRINTS', combine_brands=True, ignore_none=True)
@@ -247,6 +248,7 @@ MIGRATION = {
   "GENESIS G80 2017": HYUNDAI.GENESIS_G80,
   "GENESIS G90 2017": HYUNDAI.GENESIS_G90,
   "GENESIS GV80 2023": HYUNDAI.GENESIS_GV80,
+  "MY CAR": MYCA.MY_CAR,
   "MAZDA CX-5": MAZDA.MAZDA_CX5,
   "MAZDA CX-9": MAZDA.MAZDA_CX9,
   "MAZDA 3": MAZDA.MAZDA_3,
