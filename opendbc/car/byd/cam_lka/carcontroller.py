@@ -1,5 +1,6 @@
 import math
 import numpy as np
+import cereal.messaging as messaging
 
 from opendbc.can.packer import CANPacker
 
@@ -7,6 +8,7 @@ from opendbc.car.byd.cam_lka.bydcan import (
   create_accel_command,
   create_can_steer_command,
   create_lkas_hud,
+  create_resume_sequence,
   create_steering_torque_spoof_camera,
   send_buttons,
 )
@@ -21,9 +23,11 @@ MAX_STEER_ANGLE_OFFSET_DEG = 10
 # Degrees: warn on HUD when command hits angle safety envelope (meas offset or global max).
 STEER_ANGLE_LIMIT_WARN_EPS_DEG = 0.08
 LKA_COOLDOWN_MIN_FRAMES = 30
-BUTTON_KEEPALIVE_FRAMES = 100
 SPOOF_DURATION_FRAMES = 50
 SPOOF_CYCLE_FRAMES = 150
+RESUME_SEQUENCE_STEP_FRAMES = 5  # 50 ms spacing at 100 Hz
+SNG_INITIAL_PRESS_DELAY_FRAMES = 310
+SNG_REPEAT_PRESS_DELAY_FRAMES = 110
 
 
 def lowpass_1pole(x, y_prev):
@@ -46,6 +50,69 @@ class CarController(CarControllerBase):
     self.prev_res_press = False
     self.lka_latched = False
     self.button_send_bus = CANBUS.cam_bus if CP.carFingerprint in BYD_ATTO_STYLE_PLATFORMS else CANBUS.main_bus
+    # A stock-like resume tap is sent as a short multi-frame sequence.
+    self.resume_sequence_frames = []
+    self.resume_sequence_counter = 0
+    self.resume_sequence_next_frame = 0
+    self.plan_sm = messaging.SubMaster(['longitudinalPlan']) if not CP.openpilotLongitudinalControl else None
+    self.sng_next_press_frame = 0
+    self.sng_resume_counter = 0
+    self.sng_active = False
+
+  def _start_resume_sequence(self):
+    sequence_frames, self.resume_sequence_counter = create_resume_sequence(self.packer, self.button_send_bus, self.resume_sequence_counter)
+    # Send the first frame immediately and queue the rest to preserve stock-like timing
+    self.resume_sequence_frames = sequence_frames[1:]
+    self.resume_sequence_next_frame = self.frame + RESUME_SEQUENCE_STEP_FRAMES
+    return sequence_frames[0]
+
+  def _plan_allows_resume(self):
+    if self.plan_sm is None or not self.plan_sm.valid['longitudinalPlan']:
+      return False
+
+    plan = self.plan_sm['longitudinalPlan']
+    return plan.aTarget > 0 and not plan.shouldStop
+
+  def _update_sng_sequence(self, enabled, CS, can_sends):
+    if self.plan_sm is None:
+      return
+
+    # Resume sequence frames follow their own cadence once started.
+    if self.frame % 2 != 0:
+      return
+
+    if self.resume_sequence_frames:
+      if self.frame >= self.resume_sequence_next_frame:
+        can_sends.append(self.resume_sequence_frames.pop(0))
+        self.resume_sequence_next_frame = self.frame + RESUME_SEQUENCE_STEP_FRAMES
+      return
+
+    self.plan_sm.update(0)
+    plan_allows_resume = self._plan_allows_resume()
+
+    if not (CS.out.standstill and enabled and CS.out.cruiseState.enabled and plan_allows_resume):
+      self.sng_active = False
+      return
+
+    if not self.sng_active:
+      self.sng_active = True
+      self.sng_next_press_frame = self.frame + SNG_INITIAL_PRESS_DELAY_FRAMES
+      self.sng_resume_counter = 0
+      return
+
+    if CS.out.gasPressed or CS.res_btn:
+      self.sng_next_press_frame = max(self.sng_next_press_frame, self.frame + SNG_REPEAT_PRESS_DELAY_FRAMES)
+      self.sng_resume_counter = 0
+      return
+
+    if self.frame > self.sng_next_press_frame and CS.out.brakePressed:
+      return
+
+    if self.frame > self.sng_next_press_frame:
+      self.sng_resume_counter += 1
+      # Treat one retry as one complete stock-like resume tap.
+      can_sends.append(self._start_resume_sequence())
+      self.sng_next_press_frame = self.frame + SNG_REPEAT_PRESS_DELAY_FRAMES
 
   def _update_lka_latch_state(self, CS):
     if self.CP.carFingerprint in (CAR.BYD_M6, CAR.BYD_SEAL, CAR.BYD_SHARK, CAR.BYD_SEALION7):
@@ -158,9 +225,8 @@ class CarController(CarControllerBase):
         long_active = CC.enabled and not CS.out.gasPressed
         brake_hold = CS.out.standstill and actuators.accel < 0
         can_sends.append(create_accel_command(self.packer, actuators.accel, long_active, self.accel_mult, brake_hold))
-      else:
-        if CS.out.standstill and CC.enabled and (self.frame % BUTTON_KEEPALIVE_FRAMES == 0):
-          can_sends.append(send_buttons(self.packer, 1, 0, self.button_send_bus))
+
+    self._update_sng_sequence(CC.enabled, CS, can_sends)
 
     if self.CP.carFingerprint in (CAR.BYD_M6, CAR.BYD_SEAL, CAR.BYD_SEALION7, CAR.BYD_SHARK):
       cycle_position = self.frame % SPOOF_CYCLE_FRAMES

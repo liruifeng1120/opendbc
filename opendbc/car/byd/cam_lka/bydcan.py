@@ -133,6 +133,28 @@ def send_buttons(packer, state, cancel, bus):
   return packer.make_can_msg("PCM_BUTTONS", bus, values)
 
 
+def create_resume_sequence(packer, bus, counter_start, num_frames=4):
+  values = {
+    "SET_BTN": 1,
+    "RES_BTN": 1,
+    "SET_ME_1_1": 1,
+    "SET_ME_1_2": 1,
+    "ACC_ON_BTN": 0,
+  }
+  _, dat, tx_bus = packer.make_can_msg("PCM_BUTTONS", bus, values)
+  msgs = []
+  counter = counter_start & 0xF
+
+  for _ in range(num_frames):
+    sequence_dat = bytearray(dat)
+    sequence_dat[6] = (counter & 0xF) << 4
+    sequence_dat[7] = byd_checksum(0x3B0, None, sequence_dat)
+    msgs.append((0x3B0, bytes(sequence_dat), tx_bus))
+    counter = (counter + 1) & 0xF
+
+  return msgs, counter
+
+
 # Module-level state for realistic torque ramp-up simulation
 _torque_spoof_state = {
   "current_torque_offset": 0.0,
