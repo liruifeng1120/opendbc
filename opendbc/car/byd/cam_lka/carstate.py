@@ -58,6 +58,8 @@ class CarState(CarStateBase):
 
     self.lkas_rdy_btn = cp.vl["PCM_BUTTONS"]["LKAS_ON_BTN"]
     self.res_btn = cp.vl["PCM_BUTTONS"]["RES_BTN"]
+    self.set_btn = int(cp.vl["PCM_BUTTONS"]["SET_BTN"])
+    self.cruise_hud_state = -1
     self.abh = cp_cam.vl["LKAS_HUD_ADAS"]["SET_ME_XFF"]
     self.passthrough = cp_cam.vl["LKAS_HUD_ADAS"]["TSR_STATUS"]
     self.HMA = cp_cam.vl["LKAS_HUD_ADAS"]["HMA"]
@@ -155,6 +157,7 @@ class CarState(CarStateBase):
 
     if self.CP.carFingerprint in (CAR.BYD_SEAL, CAR.BYD_SEALION7, CAR.BYD_SHARK, CAR.BYD_M6):
       cruise_state = parser_alt.vl["ACC_HUD_ADAS"]["CRUISE_STATE"]
+      self.cruise_hud_state = int(cruise_state)
       ret.cruiseState.enabled = cruise_state in (3, 5, 6, 7)
     else:
       ret.cruiseState.enabled = self.is_cruise_latch
