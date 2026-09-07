@@ -1,0 +1,1497 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: GWM IDCU IFC TEL EPS IBCS PAS VCU LS
+
+
+BO_ 71 GW_TEL_RmtCntrlReq_1_A: 8 GWM
+ SG_ TEL_UnlockDoorReq : 0|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_UnlockDoorReqVD : 1|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_LockDoorReq : 2|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_LockDoorReqVD : 3|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_LowBeamLightOnReq : 4|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_LowBeamLightOnReqVD : 5|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_LowBeamLightOffReq : 6|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_LowBeamLightOffReqVD : 7|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_HornReq : 8|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_HornReqVD : 9|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_SeatHeatReq : 10|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_SeatHeatReqVD : 11|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_WindowsCloseReq : 12|1@0+ (1,0) [0|1] "-" Vector__XXX
+ SG_ TEL_WindowsCloseReqVD : 13|1@0+ (1,0) [0|1] "-" Vector__XXX
+ SG_ TEL_WindowsOpenReq : 14|1@0+ (1,0) [0|1] "-" Vector__XXX
+ SG_ TEL_WindowsOpenReqVD : 15|1@0+ (1,0) [0|1] "-" Vector__XXX
+ SG_ TEL_ParkingLampOnReq : 16|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_ParkingLampOnReqVD : 17|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_ParkingLampOffReq : 18|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_ParkingLampOffReqVD : 19|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_HazardLightOnReq : 20|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_HazardLightOnReqVD : 21|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_SunRoofOpenReq : 22|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_SunRoofOpenReqVD : 23|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_SunRoofCloseReq : 24|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_SunRoofCloseReqVD : 25|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_EngineStartReq : 26|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_EngineStartReqVD : 27|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_EngineStopReq : 28|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_EngineStopReqVD : 29|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_VoiceInput : 30|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_VoiceInputVD : 31|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_TrunkUnlockReq : 32|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_TrunkUnlockReqVD : 33|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_VehSearchReq : 34|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_VehSearchReqVD : 35|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_PowerOnReq : 36|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_PowerOnReqVD : 37|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_PowerOffReq : 38|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_PowerOffReqVD : 39|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_EngineForbidReq : 40|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_EnginePermitReq : 41|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_EngineForbidReqVD : 42|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_EnginePermitReqVD : 43|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_HornOffReq : 44|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_HornOffReqVD : 45|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_HazardLightOffReq : 46|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_HazardLightOffReqVD : 47|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_PowerOnReq2 : 48|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_PowerOnReq2VD : 49|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_PLGMOpenReq : 50|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_PLGMOpenReqVD : 51|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_PLGMCloseReq : 52|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_PLGMCloseReqVD : 53|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_EngForceStartVD : 54|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_EngForceStart : 55|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ TEL_PowerOntimerReq : 61|6@0+ (1,0) [0|60] "min" Vector__XXX
+ SG_ TEL_WindowsVentilateModeReq : 62|1@0+ (1,0) [0|1] "-" Vector__XXX
+ SG_ TEL_WindowsVentilateModeReqVD : 63|1@0+ (1,0) [0|1] "-" Vector__XXX
+
+BO_ 75 GW_CDC_ACU_23_B_A: 8 GWM
+ SG_ ACU_MSM_VR_FLSeatVoiceCtrl : 3|4@0+ (1,0) [0|15] "-" Vector__XXX
+ SG_ ACU_MSM_VR_FLSeatVoiceCtrlVD : 4|1@0+ (1,0) [0|1] "-" Vector__XXX
+ SG_ ACU_ShortcutMode : 7|3@0+ (1,0) [0|7] "-" Vector__XXX
+ SG_ ACU_SCMNapSettingSave : 15|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_RSCM_RL_NapSettingSave : 17|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_RSCM_RR_NapSettingSave : 19|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_RL_ShortcutMode : 23|3@0+ (1,0) [0|7] "-" Vector__XXX
+ SG_ ACU_RR_ShortcutMode : 26|3@0+ (1,0) [0|7] "-" Vector__XXX
+ SG_ IVI_EPMModSet : 33|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ IVI_EPMManualCfg : 35|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ IVI_EPMManualCtr : 37|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ IVI_WashModeSet : 39|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ ACU_VR_SVM_Switch : 54|1@0+ (1,0) [0|1] "" IDCU
+ SG_ ACU_VR_APA_Switch : 55|1@0+ (1,0) [0|1] "" IDCU
+ SG_ ACU_BDC_WelcomelampCtrl : 57|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ ACU_BDC_LOGOLightCtrl : 59|2@0+ (1,0) [0|3] "-" Vector__XXX
+
+BO_ 81 GW_BDC_SBM_1_A: 8 GWM
+ SG_ SBM_WELReq : 0|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ SBM_DoorLockReq : 1|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ SBM_DoorUnlockReq : 2|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ SBM_TrunkReq : 4|2@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ SBM_KeyReminderUnlock : 5|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ SBM_VKWELReq : 7|2@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ SBM_WALReq : 8|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ SBM_APUReq : 9|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ SBM_SATOReq : 10|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ SBM_SATOReminder : 12|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ SBM_WALReadyToLockInd : 14|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ SBM_DriverDoorLockReq : 15|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ SBM_DriverDoorUnlockReq : 16|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ SBM_PassengerDoorLockReq : 17|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ SBM_PassengerDoorUnlockReq : 18|1@0+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 83 GW_CDC_PEPS_7_A: 8 GWM
+ SG_ PEPS_SUB_ID : 7|8@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ PEPS_AuthResp : 15|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 84 GW_CDC_ACU_1_A_A: 8 GWM
+ SG_ ACU_PCS_SVM_FunctionCmd : 3|4@0+ (1,0) [0|15] "-" IDCU
+ SG_ ACU_PCS_SVM_SingleViewCmd : 7|4@0+ (1,0) [0|15] "-" IDCU
+ SG_ ACU_PCS_SVM_PGSCmd : 8|1@0+ (1,0) [0|1] "-" IDCU
+ SG_ ACU_PCS_SVM_MODCmd : 9|1@0+ (1,0) [0|1] "-" IDCU
+ SG_ ACU_PCS_SVM_ViewModeCmd : 10|1@0+ (1,0) [0|1] "-" IDCU
+ SG_ ACU_PCS_SVM_SoundReminderCmd : 11|1@0+ (1,0) [0|1] "-" IDCU
+ SG_ ACU_PCS_SVM_PGSReturnCmd : 12|1@0+ (1,0) [0|1] "-" IDCU
+ SG_ ACU_PCS_AdjParkPosCmd : 15|3@0+ (1,0) [0|7] "-" IDCU
+ SG_ ACU_ER_FuncCfg : 17|2@0+ (1,0) [0|3] "-" IDCU
+ SG_ ACU_PCS_ER_EnterCmd : 18|1@0+ (1,0) [0|1] "-" IDCU
+ SG_ ACU_PCS_ER_QuitConfirm : 19|1@0+ (1,0) [0|1] "-" IDCU
+ SG_ ACU_PCS_ScreenTouchSt : 21|2@0+ (1,0) [0|3] "-" IDCU
+ SG_ ACU_PCS_ScreenCoordY : 31|12@0+ (1,0) [0|719] "-" IDCU
+ SG_ ACU_PCS_ScreenCoordX : 35|12@0+ (1,0) [0|1279] "-" IDCU
+
+BO_ 118 TEL_10_B_A: 8 TEL
+ SG_ TBOX_SPA_DelayFeedback : 40|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ TEL_FAPAVideoReqSt : 45|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ TBOX_SPA_CopyCounter : 55|16@0+ (1,0) [0|65535] "" IDCU,IFC
+
+BO_ 128 GW_CDC_6_A: 8 GWM
+ SG_ CDC_ADAS_NOASwitchReq : 1|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_SGWSwitchReq : 3|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_TSRSwitchReq : 5|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_OverSpeedSwitchReq : 7|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_ISLCSwitchReq : 9|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_TLRSwitchReq : 11|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_DOWSwitchReq : 13|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_LCA_BSDSwitchReq : 15|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ALC_ByDriverVoiceCtrl : 17|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_RCTASwitchReq : 19|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_RCWSwitchReq : 21|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_HMASwitchReq : 23|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_LKA_LDWSwitchReq : 25|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_LateralContrlSwitchReq : 27|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_FCWSwitchReq : 29|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_FCWWarmDistance : 31|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_AEBSwitchReq : 33|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_RCTBSwitchReq : 35|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_LCSwitchSt : 37|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_ELKSwitchSt : 39|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_FCTASwitchSt : 41|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_TCPSwitchSt : 42|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ CDC_ADAS_TargetGapSet : 45|3@0+ (1,0) [0|7] "" IDCU,IFC
+ SG_ CDC_ADAS_ALCSwitchSt : 47|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_TargetSpeedSet : 55|8@0+ (1,0) [15|140] "" IDCU,IFC
+ SG_ CDC_ADAS_ACCSwitchReq : 57|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_LaneChoice : 59|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_IntelligentEvasion : 61|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_ACCPlusSwitchReq : 63|2@0+ (1,0) [0|3] "" IDCU,IFC
+
+BO_ 129 GW_CDC_ACU_5_A: 8 GWM
+ SG_ ACU_EPSStyleCfg : 1|2@0+ (1,0) [0|3] "" EPS,IBCS
+ SG_ ACU_EPBAutoModeCfg : 3|2@0+ (1,0) [0|3] "" IBCS
+ SG_ ACU_LDWLKACfg : 5|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_LDWWarmSnsCfg : 7|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_ACCStyleCfg : 9|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_FCWAcousticWarnCfg : 11|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_FCWSeatVibrationWarnCfg : 13|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_FCWSeatbeltPretensionWarnCfg : 15|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_FCWWarnDistanceCfg : 17|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ ACU_FCWOff : 19|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ ACU_AEBOff : 21|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ CDC_ADAS_ACCStyleSwitchReq : 23|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ ACU_ESPFuncSwCfg : 25|2@0+ (1,0) [0|3] "" IBCS
+ SG_ ACU_HDCFuncSwCfg : 27|2@0+ (1,0) [0|3] "" IBCS
+ SG_ CDC_ExhibitionModeReuqest : 31|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_PAS_ButtonPress : 35|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ ACU_BrkPedalModeCfgSt : 41|2@0+ (1,0) [0|3] "" IBCS
+
+BO_ 130 GW_CDC_ACU_2_A_A: 8 GWM
+ SG_ ACU_LDW_LKACfg : 1|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ ACU_LDW_WarmSnsCfg : 3|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ ACU_SVM_LeftBlindViewReq : 5|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ ACU_SVM_RightBlindViewReq : 7|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ ACU_IFC_CruiseModeCfg : 9|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ ACU_LKS_Sensitivity : 11|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ ACU_TSR_SwitchReq : 13|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ ACU_HMA_SwitchReq : 15|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ ACU_LKS_TypeReq : 17|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ ACU_FaceID_Delete : 23|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ ACU_BSDCfg : 41|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_RCTACfg : 43|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_DOWCfg : 45|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_iACC_SwitchReq : 47|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_TSR_AudioWarnReq : 50|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ ACU_DMSSwitch : 52|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_DMSMode : 55|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ ACU_HWAHFCfg : 57|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_HWAHF_AudioWarningTypeCfg : 59|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_HWA_SwitchReq : 63|2@0+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 131 GW_CDC_ACU_3_A_A: 8 GWM
+ SG_ ACU_WCM_SwitchStCfg : 20|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_BSDSwtichSt : 21|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ ACU_ELKCfg : 23|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_FCTACfg : 25|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_RAWCfg : 27|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_RCTA_TypeReqCfg : 29|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_FCTA_TypeReqCfg : 31|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_RegisterTriger : 35|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ ACU_VerifyTriger : 39|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ ACU_AVHSoftSwitchst : 40|2@0+ (1,0) [0|2] "-" IBCS
+ SG_ ACU_EPBSwitchSt : 42|2@0+ (1,0) [0|3] "-" IBCS
+ SG_ ACU__DragModeReq : 44|2@0+ (1,0) [0|2] "-" IBCS
+ SG_ ACU_FaceIDQuit : 45|1@0+ (1,0) [0|1] "-" Vector__XXX
+ SG_ ACU_FaceIDSwitch : 47|2@0+ (1,0) [0|2] "-" Vector__XXX
+ SG_ ACU_BrkCSTModeCfgSt : 54|2@0+ (1,0) [0|3] "" IBCS
+
+BO_ 161 GW_CDC_ACU_EV_1_B_A: 8 GWM
+ SG_ ACU_RecpLevelCfg : 2|3@0+ (1,0) [0|7] "-" Vector__XXX
+ SG_ ACU_CreepCfg : 5|3@0+ (1,0) [0|7] "-" Vector__XXX
+ SG_ ACU_EpedalCfg : 10|3@0+ (1,0) [0|7] "-" Vector__XXX
+ SG_ ACU_ChgSpdCfg : 15|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_WarmTimeCfg : 19|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ ACU_DrvModCfg : 22|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ ACU_DischgSocCfg : 30|7@0+ (1,0) [0|100] "%" Vector__XXX
+ SG_ ACU_EcoPlusModeCfg : 37|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ ACU_LongDistCfg : 39|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ ACU_DrvTypCfg : 41|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ ACU_ChgSOCCfg : 45|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ ACU_DischgSt : 47|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ACU_SmartRecCfg : 53|2@0+ (1,0) [0|3] "-" Vector__XXX
+
+BO_ 352 SPA_1: 8 IDCU
+ SG_ IFC_SPA_TorqReqVD : 2|1@0+ (1,0) [0|1] "" TEL,VCU
+ SG_ IFC_SPA_TorqReq : 3|1@0+ (1,0) [0|1] "" TEL,VCU
+ SG_ IFC_SPA_gearReqVD : 4|1@0+ (1,0) [0|1] "" TEL,VCU
+ SG_ IFC_SPA_gearReq : 7|3@0+ (1,0) [0|3] "" TEL,VCU
+ SG_ IFC_SPA_MsgCounter : 51|4@0+ (1,0) [0|15] "" TEL,VCU
+ SG_ IFC_SPA_Checksum : 63|8@0+ (1,0) [0|255] "" TEL,VCU
+
+BO_ 353 SPA_2: 8 IDCU
+ SG_ IFC_SPA_DelayMoni : 7|1@0+ (1,0) [0|1] "" TEL
+ SG_ IFC_SPA_DelayCounter : 15|16@0+ (1,0) [0|65535] "" TEL
+
+BO_ 354 PAS_3: 8 IDCU
+ SG_ FAPA_LSMVehSecReq : 0|1@0+ (1,0) [0|1] "" GWM,IBCS
+ SG_ PAS_SteeringCtrlReq : 2|2@0+ (1,0) [0|3] "" GWM,TEL,EPS
+ SG_ PAS_APAModeInd : 4|2@0+ (1,0) [0|3] "" GWM
+ SG_ FAPA_LSMPrefill : 5|1@0+ (1,0) [0|1] "" GWM,IBCS
+ SG_ FAPA_LSMNudgeReq : 6|1@0+ (1,0) [0|1] "" GWM,IBCS
+ SG_ FAPA_DriverPresenceExternal : 7|1@0+ (1,0) [0|1] "" GWM,IBCS
+ SG_ PAS_SteeringAngleReqValue : 15|16@0+ (0.1,-780) [-780|779.9] "deg" GWM,TEL,EPS
+ SG_ FAPA_PASRemoteParkingMode : 25|2@0+ (1,0) [0|3] "" GWM,TEL,VCU
+ SG_ FAPA_PASRemoteParkingEnable : 26|1@0+ (1,0) [0|1] "" GWM
+ SG_ FAPA_BCMTurnLampReq : 28|2@0+ (1,0) [0|3] "" GWM
+ SG_ PAS_BackParkDisplayReq : 30|2@0+ (1,0) [0|3] "" GWM
+ SG_ PAS_APAPwrModeReq : 31|1@0+ (1,0) [0|1] "" GWM,TEL,VCU
+ SG_ PAS_APAButtonPress : 32|1@0+ (1,0) [0|1] "" GWM
+ SG_ FAPA_SafeDrvrHandoverReq : 33|1@0+ (1,0) [0|1] "" GWM,IBCS
+ SG_ FAPA_LSMSubMTReq : 35|2@0+ (1,0) [0|3] "" GWM,IBCS
+ SG_ FAPA_LSMSubMTLevel : 37|2@0+ (1,0) [0|3] "" GWM,IBCS
+ SG_ FAPA_LSMSubMTLong : 39|2@0+ (1,0) [0|3] "" GWM,IBCS
+ SG_ FAPA_LSMVehDirRq : 45|2@0+ (1,0) [0|3] "" GWM,IBCS
+ SG_ FAPA_LSMComfBrakeReq : 47|2@0+ (1,0) [0|3] "" GWM,IBCS
+ SG_ PAS_3_MsgCounter : 51|4@0+ (1,0) [0|15] "" GWM,TEL,EPS,IBCS,VCU
+ SG_ PAS_ParkSideSel : 53|2@0+ (1,0) [0|3] "" GWM,IBCS
+ SG_ PAS_FrontObjExist : 55|2@0+ (1,0) [0|3] "" GWM,IBCS,VCU
+ SG_ PAS_3_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,TEL,EPS,IBCS,VCU
+
+BO_ 355 PAS_4: 8 IDCU
+ SG_ PAS_APA_ESPStopDist : 3|12@0+ (1,0) [0|4095] "" GWM,IBCS
+ SG_ PAS_APA_BrkFuncMode : 7|4@0+ (1,0) [0|15] "" GWM,IBCS
+ SG_ PAS_APA_ESPSpdLimit : 23|8@0+ (0.1,0) [0|25.5] "" GWM,IBCS
+ SG_ PAS_BCSTargGearReq : 26|3@0+ (1,0) [0|7] "" GWM,IBCS
+ SG_ PAS_APABrkModeSt : 29|3@0+ (1,0) [0|7] "" GWM,IBCS
+ SG_ PAS_APAFailBrkMode : 31|2@0+ (1,0) [0|3] "" GWM,IBCS
+ SG_ PAS_4_MsgCounter : 35|4@0+ (1,0) [0|15] "" GWM,TEL,IBCS,VCU
+ SG_ PAS_APASt : 38|3@0+ (1,0) [0|7] "" GWM,TEL,EPS,IBCS
+ SG_ PAS_SPA_WorkStVD : 39|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS,PAS,VCU
+ SG_ PAS_APAQuitInd : 44|5@0+ (1,0) [0|31] "" GWM,TEL,PAS
+ SG_ PAS_APARecInd : 47|3@0+ (1,0) [0|7] "" GWM
+ SG_ PAS_APADrvReq : 52|5@0+ (1,0) [0|31] "" GWM
+ SG_ PAS_SPA_WorkSt : 55|3@0+ (1,0) [0|7] "" GWM,TEL,IBCS,PAS,VCU
+ SG_ PAS_4_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,TEL,IBCS,VCU
+
+BO_ 360 EPS_3: 8 EPS
+ SG_ EPS_PstOverlaySt : 2|3@0+ (1,0) [0|7] "" IDCU,IFC,TEL
+ SG_ EPS_ErrFeedback : 6|4@0+ (1,0) [0|15] "" IDCU,IFC,TEL
+ SG_ EPS_TargetAngle : 15|16@0+ (0.1,-780) [-780|779.9] "deg" IDCU,IFC,TEL
+ SG_ EPS_SACMotorTorAct : 31|10@0+ (0.02,-10.22) [-10.22|10.22] "Nm" IDCU,IFC,TEL
+ SG_ EPS_SACMotorTorLimInt : 37|10@0+ (0.01,0) [0|10.22] "Nm" IDCU,IFC,TEL
+ SG_ EPS_RecTargAngOvRang : 40|1@0+ (1,0) [0|1] "" IDCU,IFC,TEL
+ SG_ EPS_RecTargAngSpdOvRang : 41|1@0+ (1,0) [0|1] "" IDCU,IFC,TEL
+ SG_ EPS_3_MsgCounter : 51|4@0+ (1,0) [0|15] "" IDCU,IFC,TEL,PAS
+ SG_ EPS_AssistPraSwitchToLKA : 52|1@0+ (1,0) [0|1] "" IDCU,IFC,TEL
+ SG_ EPS_3_Checksum : 63|8@0+ (1,0) [0|255] "" IDCU,IFC,TEL,PAS
+
+BO_ 362 EPS_2: 8 EPS
+ SG_ EPS_PAS_EpasFailed : 0|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,PAS
+ SG_ EPS_PAS_ReqFeedback : 1|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,PAS
+ SG_ EPS_2_StrngWhlTorqVD : 2|1@0+ (1,0) [0|1] "" IDCU,IFC,TEL,PAS
+ SG_ EPS_2_StrngWhlTorq : 27|12@0+ (0.01,-15) [-15|15] "Nm" IDCU,IFC,TEL,PAS
+ SG_ EPS_HandsOffDetStVD : 29|1@0+ (1,0) [0|1] "" IDCU,IFC,TEL
+ SG_ EPS_HandsOffDetSt : 31|2@0+ (1,0) [0|3] "" IDCU,IFC,TEL
+ SG_ EPS_2_MsgCounter : 51|4@0+ (1,0) [0|15] "" GWM,IDCU,IFC,PAS
+ SG_ EPS_PAS_AbortFeedback : 55|4@0+ (1,0) [0|15] "" GWM,IDCU,IFC,TEL,PAS
+ SG_ EPS_2_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,IDCU,IFC,PAS
+
+BO_ 374 VCU_21_A: 8 VCU
+ SG_ VCU_TargetRecpTorq_A : 7|11@0+ (2,0) [0|4000] "Nm" TEL,IBCS
+ SG_ VCU_EMS_EngSpdVD_A : 11|1@0+ (1,0) [0|1] "" IBCS
+ SG_ VCU_TargetRecpTorqVD_A : 12|1@0+ (1,0) [0|1] "" TEL,IBCS
+ SG_ VCU_EMS_EngSpd_A : 31|16@0+ (1,0) [0|65535] "rpm" IBCS
+ SG_ VCU_EMS_AccPedalActPst_A : 47|8@0+ (0.392,0) [0|99.96] "%" IDCU,IFC,IBCS
+ SG_ VCU_21_A_MsgCounter : 51|4@0+ (1,0) [0|15] "-" IDCU,IFC,IBCS,PAS
+ SG_ VCU_EMS_BrkNomalCloseSwitchSt_A : 52|1@0+ (1,0) [0|1] "-" IBCS
+ SG_ VCU_EMS_BrkPedalSt_A : 53|1@0+ (1,0) [0|1] "" IDCU,IFC,IBCS,PAS
+ SG_ VCU_EMS_BrkPedalStVD_A : 54|1@0+ (1,0) [0|1] "" IDCU,IFC,IBCS,PAS
+ SG_ VCU_EMS_AccPedalActPstVD_A : 55|1@0+ (1,0) [0|1] "" IDCU,IFC,IBCS
+ SG_ VCU_21_A_Checksum : 63|8@0+ (1,0) [0|255] "-" IDCU,IFC,IBCS,PAS
+
+BO_ 388 GW_CS_1_A: 8 GWM
+ SG_ CS_RearWiprSwtSt : 1|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CS_FrntWshrSwtSt : 2|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ CS_FrntWiprSwtSt : 5|3@0+ (1,0) [0|7] "" IDCU,IFC
+ SG_ CS_TurnchangeLmpSwtSt : 10|3@0+ (1,0) [0|7] "" IDCU,IFC
+ SG_ CS_HiBeamSwtSt : 13|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CS_DrvReqShft : 19|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ CS_DrvReqShftInv : 23|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ CS_FuSaErrSt : 24|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CS_ShiftFault : 25|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CS_tempA29N_1_MsgCounter : 51|4@0+ (1,0) [0|15] "" IDCU,IFC
+ SG_ CS_tempA29N_1_Checksum : 63|8@0+ (1,0) [0|255] "" IDCU,IFC
+
+BO_ 390 ADAS_14: 8 IDCU
+ SG_ ADAS_LongCtrlTargetAccel : 7|8@0+ (0.05,-5) [-5|7.75] "m/s2" GWM,TEL,IBCS,VCU
+ SG_ ADAS_LongCtrlTypReqMode : 9|2@0+ (1,0) [0|3] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_LongCtrlTypReq : 12|3@0+ (1,0) [0|7] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_ACCRecpDecel : 23|8@0+ (0.05,-5) [-5|7.75] "m/s2" GWM,TEL,IBCS,VCU
+ SG_ ADAS_LongCtrlDecToStopReq : 40|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_LongCtrlAVHReq : 41|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS
+ SG_ ADAS_LongCtrlDriveOff : 42|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_ACCRecpDecelReq : 46|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_ACCDecelForecast : 47|1@0+ (1,0) [0|1] "" GWM,TEL,VCU
+ SG_ ADAS_14_MsgCounter : 51|4@0+ (1,0) [0|15] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_LongCtrlModeForBrkSys : 54|3@0+ (1,0) [0|7] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_LongCtrlAccelCtrlReq : 55|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_14_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,TEL,IBCS,VCU
+
+BO_ 391 ADAS_15: 8 IDCU
+ SG_ ADAS_AEBTargetDecel : 7|16@0+ (0.0004882,-16) [-16|15.994187] "m/s2" GWM,TEL,IBCS,VCU
+ SG_ ADAS_AEBDecelCtrlReq : 16|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_AEBLVehHoldReq : 18|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_ABAReq : 19|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_ABALevel : 21|2@0+ (1,0) [0|3] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_AWBReq : 22|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_ABPReq : 23|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_AWBLevel : 27|4@0+ (1,0) [0|15] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_ActTrqReq : 33|14@0+ (1,-5000) [-5000|5000] "Nm" GWM,TEL,IBCS,VCU
+ SG_ ADAS_ActTrqReqVD : 34|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_15_MsgCounter : 51|4@0+ (1,0) [0|15] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_15_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,TEL,IBCS,VCU
+
+BO_ 400 GW_CS_2_A: 8 GWM
+ SG_ CS_DriveMode : 3|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ CS_GearShiftLeverPstReq : 11|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ CS_DriveModeRespFail : 15|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ CS_PGearErrSt : 24|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CS_RemoteDiagCode : 26|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ CS_PbuttonInfo : 33|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CS_GearShiftLeverPstmech : 37|3@0+ (1,0) [0|7] "" IDCU,IFC
+ SG_ CS_ECOErrSt : 39|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CS_DriveModeSwitchSt : 42|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CS_tempA29N_2_MsgCounter : 51|4@0+ (1,0) [0|15] "" IDCU,IFC
+ SG_ CS_WarnInfo : 55|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ CS_tempA29N_2_Checksum : 63|8@0+ (1,0) [0|255] "" IDCU,IFC
+
+BO_ 412 ADAS_16: 8 IDCU
+ SG_ ADAS_StrAngleReq : 7|16@0+ (0.1,-780) [-780|779.9] "" GWM,TEL,EPS,VCU
+ SG_ ADAS_SACMotorTorLimExtMax : 20|10@0+ (0.01,0) [0|10.22] "" GWM,TEL,EPS,VCU
+ SG_ ADAS_AssistPraSwitchReq : 21|1@0+ (1,0) [0|1] "" GWM,TEL,EPS,VCU
+ SG_ ADAS_L2FunReqSt : 23|2@0+ (1,0) [0|3] "" GWM,TEL,EPS,VCU
+ SG_ ADAS_SACMotorTorLimExtMin : 25|10@0+ (0.01,-10.22) [-10.22|0] "" GWM,TEL,EPS,VCU
+ SG_ ADAS_16_MsgCounter : 51|4@0+ (1,0) [0|15] "" GWM,TEL,EPS,VCU
+ SG_ ADAS_ControlMode : 55|4@0+ (1,0) [0|15] "" GWM,TEL,IBCS,VCU
+ SG_ ADAS_16_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,TEL,EPS,VCU
+
+BO_ 413 ADAS_BSDM_2: 8 IDCU
+ SG_ ADAS_RCTBTargetDecel : 7|8@0+ (0.05,-10) [-10|2.75] "m/s2" GWM,TEL,IBCS
+ SG_ ADAS_RCTB_WarningSt_L : 8|1@0+ (1,0) [0|1] "" GWM
+ SG_ ADAS_RCTB_WarningSt_R : 9|1@0+ (1,0) [0|1] "" GWM
+ SG_ ADAS_RCTBBrkReq : 12|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS
+ SG_ ADAS_RCTBBrkgVd : 13|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS
+ SG_ ADAS_RCTBPrefillReq : 15|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_BSDM_2_MsgCounter : 51|4@0+ (1,0) [0|15] "" GWM,TEL,IBCS
+ SG_ ADAS_BSDM_2_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,TEL,IBCS
+
+BO_ 430 GW_SRS_1_A: 8 GWM
+ SG_ SRS_CrashOutputSt : 7|8@0+ (1,0) [0|160] "" IDCU,IFC
+ SG_ SRS_Front_CrashOutputSt : 8|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ SRS_LeftSide_CrashOutputSt : 9|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ SRS_RightSide_CrashOutputSt : 10|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ SRS_Rear_CrashOutputSt : 11|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ SRS_RolloverCrashOutpuSt : 12|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ SRS_NearCrashOutputSt : 16|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ SRS_1_MsgCounter : 51|4@0+ (1,0) [0|15] "" IDCU,IFC
+ SG_ SRS_1_Checksum : 63|8@0+ (1,0) [0|255] "" IDCU,IFC
+
+BO_ 520 GWM_SRS_IMU_1_A: 8 GWM
+ SG_ SRS_IMU_YawSnsCalibst : 0|1@0+ (1,0) [0|1] "" IDCU
+ SG_ SRS_IMU_VehLongAccelVD : 2|2@0+ (1,0) [0|3] "" IDCU
+ SG_ SRS_IMU_VehLatrlAccelVD : 4|2@0+ (1,0) [0|3] "" IDCU
+ SG_ SRS_IMU_YawRateVD : 6|2@0+ (1,0) [0|3] "" IDCU
+ SG_ SRS_IMU_VehLongAccel : 11|12@0+ (0.001,-2) [-2|2] "g" IDCU
+ SG_ SRS_IMU_VehLaltrlAccel : 27|12@0+ (0.001,-2) [-2|2] "g" IDCU
+ SG_ SRS_IMU_1_A_MsgCounter : 31|4@0+ (1,0) [0|15] "" IDCU
+ SG_ SRS_IMU_YawRate : 47|16@0+ (0.01,-180) [-180|180] "\A1\E3/s" IDCU
+ SG_ SRS_IMU_1_A_Checksum : 63|8@0+ (1,0) [0|255] "" IDCU
+
+BO_ 541 PAS_5: 8 IDCU
+ SG_ PAS_Mode : 3|4@0+ (1,0) [0|15] "" GWM
+ SG_ PAS_APASlotSelectFebk : 7|4@0+ (1,0) [0|15] "" GWM
+ SG_ IDCU_SPA_SpeedReqValue : 15|8@0+ (0.1,-10) [-10|10] "km/h" GWM,VCU
+ SG_ PAS_VRSwitchFailSt : 16|1@0+ (1,0) [0|1] "" GWM
+ SG_ IDCU_SPA_SpeedReqValueVD : 17|1@0+ (1,0) [0|1] "" GWM,VCU
+ SG_ IDCU_SPA_gearReq : 19|2@0+ (1,0) [0|3] "" GWM,VCU
+ SG_ IDCU_SPA_gearReqVD : 20|1@0+ (1,0) [0|1] "" GWM,VCU
+ SG_ IDCU_CDC_RealTimeVideoReadyst : 21|1@0+ (1,0) [0|1] "" GWM
+ SG_ PAS_tempA29N_1_MsgCounter : 51|4@0+ (1,0) [0|15] "" GWM
+ SG_ PAS_tempA29N_1_Checksum : 63|8@0+ (1,0) [0|255] "" GWM
+
+BO_ 542 GW_CDC_10_A: 8 GWM
+ SG_ CDC_SteeringAngleReqValue : 7|32@0+ (0.1,-780) [-780|780] "" IDCU,IFC
+ SG_ ACU_TCPSwitchReq : 33|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ CDC_SPAEnableReuqestVd : 34|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ CDC_SPAEnableReuqest : 35|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ CDC_SteeringAngleReqValueSt : 36|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ CDC_SPASt : 39|3@0+ (1,0) [0|7] "" IDCU,IFC
+ SG_ ACU_TCPSessionID : 47|4@0+ (1,0) [0|15] "" IDCU,IFC
+ SG_ CDC_tempA29N_10_MsgCounter : 51|4@0+ (1,0) [0|15] "" IDCU,IFC
+ SG_ CDC_tempA29N_10_Checksum : 63|8@0+ (1,0) [0|255] "" IDCU,IFC
+
+BO_ 543 GW_CDC_9_A: 8 GWM
+ SG_ CDC_SPA_SpeedReqValue : 7|8@0+ (0.1,-10) [-10|10] "km/h" Vector__XXX
+ SG_ CDC_APA_MaxSpeedLimitVD : 8|1@0+ (1,0) [0|1] "" IFC
+ SG_ CDC_APA_TargetDistanceVD : 9|1@0+ (1,0) [0|1] "" IFC
+ SG_ CDC_APA_FailureBrakeMode : 11|2@0+ (1,0) [0|3] "" IFC
+ SG_ CDC_SPA_gearReq : 13|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ CDC_SPA_gearReqVD : 14|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CDC_SPA_SpeedReqValueVD : 15|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CDC_APA_MaxSpeedLimit : 23|8@0+ (0.1,0) [0|25.5] "km/h" IFC
+ SG_ CDC_APA_TargetDistance : 31|12@0+ (1,0) [0|4095] "cm" IFC
+ SG_ CDC_APA_TargetGearPos : 34|3@0+ (1,0) [0|7] "" IFC
+ SG_ CDC_APA_TargetGearPosVD : 35|1@0+ (1,0) [0|1] "" IFC
+ SG_ CDC_tempA29N_9_MsgCounter : 51|4@0+ (1,0) [0|15] "" IFC
+ SG_ CDC_tempA29N_9_Checksum : 63|8@0+ (1,0) [0|255] "" IFC
+
+BO_ 545 GW_SBM_1_A: 8 GWM
+ SG_ SBM_SPA_WheelDefAgReq : 2|3@0+ (1,0) [0|7] "" IDCU,IFC,PAS
+ SG_ SBM_SPA_WheelDefAgReqVD : 3|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ SBM_SPA_gearReq : 5|2@0+ (1,0) [0|3] "" IDCU,IFC,PAS
+ SG_ SBM_SPA_gearReqVD : 6|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ SBM_SPA_TorqReq : 7|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ SBM_SPA_TorqReqVD : 8|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ SBM_SPAst : 11|3@0+ (1,0) [0|7] "" IDCU,IFC,PAS
+ SG_ SBM_SPA_EnableReq : 14|3@0+ (1,0) [0|7] "" IDCU,IFC,PAS
+ SG_ SBM_SPA_EnableReqVD : 15|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ SBM_SPA_EngineStopReq : 16|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ SBM_SPA_EngineStopReqVD : 17|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ SBM_SPA_ReqParkOut : 23|3@0+ (1,0) [0|7] "" IDCU,IFC
+ SG_ SBM_SPA_EmergencyStopReq : 32|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ SBM_SPA_EmergencyStopReqVD : 33|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ SBM_tempA29N_1_MsgCounter : 51|4@0+ (1,0) [0|15] "" IDCU,IFC,PAS
+ SG_ SBM_tempA29N_1_Checksum : 63|8@0+ (1,0) [0|255] "" IDCU,IFC,PAS
+
+BO_ 546 IBCS_1_A: 8 IBCS
+ SG_ BCS_VCUReqHydBrkTorqAct : 7|15@0+ (1,0) [0|30000] "" VCU
+ SG_ BCS_VCUReqConDecAvailable : 8|1@0+ (1,0) [0|1] "" VCU
+ SG_ BCS_VCUCtrlDecToStopFail : 17|1@0+ (1,0) [0|1] "" VCU
+ SG_ BCS_VCUReqDecToStopActiveVehhold : 18|1@0+ (1,0) [0|1] "" VCU
+ SG_ BCS_VCUReqDecToStopActive : 19|1@0+ (1,0) [0|1] "" VCU
+ SG_ BCS_VCUReqDecToStopAvailable : 20|1@0+ (1,0) [0|1] "" VCU
+ SG_ BCS_VCUReqConDecFail : 21|1@0+ (1,0) [0|1] "" VCU
+ SG_ BCS_VCUReqConDecActiveVehhold : 22|1@0+ (1,0) [0|1] "" VCU
+ SG_ BCS_VCUReqConDecActive : 23|1@0+ (1,0) [0|1] "" VCU
+ SG_ EBB_ActOutputRodTravel : 47|12@0+ (0.1,0) [0|100] "%" IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_1_A_MsgCounter : 51|4@0+ (1,0) [0|15] "" VCU
+ SG_ BCS_1_A_Checksum : 63|8@0+ (1,0) [0|255] "-" VCU
+
+BO_ 547 ADAS_3: 8 IDCU
+ SG_ ADAS_3_MsgCounter : 3|4@0+ (1,0) [0|15] "" GWM,TEL
+ SG_ ADAS_FCW_FCWWarmDistance : 5|2@0+ (1,0) [0|3] "-" GWM,TEL
+ SG_ ADAS_FCW_FCWPreWarn : 7|2@0+ (1,0) [0|3] "-" GWM,TEL
+ SG_ ADAS_AEB_SwtichSt : 9|2@0+ (1,0) [0|3] "-" GWM,TEL
+ SG_ ADAS_AEB_WorkSt : 12|3@0+ (1,0) [0|7] "-" GWM,TEL
+ SG_ ADAS_FCTA_SwtichSt : 14|2@0+ (1,0) [0|3] "-" GWM,TEL
+ SG_ ADAS_FCTA_WarningSt_L : 15|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_FCTA_WarningSt_R : 16|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_FCTA_WorkSt : 19|3@0+ (1,0) [0|7] "-" GWM,TEL
+ SG_ ADAS_TJA_LCC_Workst : 22|3@0+ (1,0) [0|7] "" GWM
+ SG_ ADAS_TJA_LCCEnterWarn : 23|1@0+ (1,0) [0|1] "" GWM
+ SG_ ADAS_LateralContrlTextinfo : 25|2@0+ (1,0) [0|3] "-" GWM,TEL
+ SG_ ADAS_TJA_LCCQuitWarn : 26|1@0+ (1,0) [0|1] "" GWM
+ SG_ ADAS_ACC_WorkSt : 30|4@0+ (1,0) [0|15] "-" GWM,TEL
+ SG_ ADAS_ACC_TargetSpeedSet : 39|8@0+ (1,0) [0|255] "km/h" GWM,TEL
+ SG_ ADAS_ACC_SoundNoitce : 41|2@0+ (1,0) [0|3] "-" GWM,TEL
+ SG_ ADAS_ACC_TargetGapSet : 44|3@0+ (1,0) [0|7] "-" GWM,TEL
+ SG_ ADAS_ACC_ObjectCapturedSt : 45|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_ACC_ISLACCSt : 47|2@0+ (1,0) [0|3] "-" GWM,TEL
+ SG_ ADAS_ACC_Textinfo : 50|3@0+ (1,0) [0|7] "-" GWM,TEL
+ SG_ ADAS_FCW_SwtichSt : 52|2@0+ (1,0) [0|3] "-" GWM,TEL
+ SG_ ADAS_FCW_WorkSt : 55|3@0+ (1,0) [0|7] "-" GWM,TEL
+ SG_ ADAS_3_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,TEL
+
+BO_ 552 GW_BCC_OSRM_1_A: 8 GWM
+ SG_ OSRM_SaveRecallPosition : 23|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ OSRM_StopRecallCom : 25|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ OSRM_SaveRecallCom : 27|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ OSRM_LeftMirrorOpSt : 34|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ OSRM_OSRMSelectSwitchSt : 37|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ OSRM_FLRearViewMirrorHeatSt : 38|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ OSRM_FRRearViewMirrorHeatSt : 39|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ OSRM_MemSysOperationReq : 42|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ OSRM_MirrorFoldUnfoldSwitchSt : 51|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ OSRM_MemorySysBuzzerReq : 53|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ OSRM_OSRMAngleAdjFuncCfgSt : 55|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ OSRM_RightMirrorOpSt : 58|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ OSRM_MirrorFoldUnfoldSt : 62|3@0+ (1,0) [0|5] "" IDCU
+
+BO_ 560 IDCU_1: 8 IDCU
+ SG_ IDCU_RvsProtCfg : 1|2@0+ (1,0) [0|3] "" VCU
+
+BO_ 563 GW_CDC_ACU_42_A: 8 GWM
+ SG_ CDC_FrontWiperIntCfgVkReq : 2|3@0+ (1,0) [0|7] "" IDCU,IFC
+ SG_ CDC_FrontWiperAutoCfgVkReq : 5|3@0+ (1,0) [0|7] "" IDCU,IFC
+ SG_ CDC_FrontFogLightVirtualSwSt : 6|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ CDC_RearFogLightVirtualSwSt : 7|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ ACU_HeadLightVirtualSwSt : 15|3@0+ (1,0) [0|7] "" IDCU,IFC
+ SG_ ACU_42_B_MsgCounter : 51|4@0+ (1,0) [0|15] "" IDCU,IFC
+ SG_ ACU_42_B_Checksum : 63|8@0+ (1,0) [0|255] "" IDCU,IFC
+
+BO_ 599 ADAS_4: 8 IDCU
+ SG_ ADAS_BSD_WorkSt : 1|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_LCA_BSD_WarningSt_L : 3|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_LCA_BSD_WarningSt_R : 5|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_LCA_BSD_SwtichSt : 7|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_LCA_WorkSt : 9|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_RCTB_SwtichSt : 11|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_RCTB_WorkSt : 14|3@0+ (1,0) [0|7] "" GWM,TEL
+ SG_ ADAS_SGW_WariningSt : 15|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_DOW_SwtichSt : 17|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_DOW_WorkSt : 19|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_DOW_WarningSt_FL : 20|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_DOW_WarningSt_FR : 21|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_DOW_WarningSt_RL : 22|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_DOW_WarningSt_RR : 23|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_RCTA_SwtichSt : 25|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_RCTA_WorkSt : 27|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_RCTA_WarningSt_L : 28|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_RCTA_WarningSt_R : 29|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_RCW_SwtichSt : 31|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_RCW_WorkSt : 33|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_RCW_WarningSt : 35|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_SGW_SwtichSt : 37|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_SGW_WorkSt : 39|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_TLR_WarningSt : 41|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_ACCStyleSwitchSt : 45|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_TLR_SwtichSt : 47|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_4_MsgCounter : 51|4@0+ (1,0) [0|15] "" GWM,TEL
+ SG_ ADAS_TLR_WorkSt : 53|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_HMA_SwtichSt : 55|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_4_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,TEL
+
+BO_ 600 ADAS_2: 8 IDCU
+ SG_ ADAS_LDW_WorkSt : 2|3@0+ (1,0) [0|7] "" GWM,TEL
+ SG_ ADAS_LKA_WorkSt : 5|3@0+ (1,0) [0|7] "" GWM,TEL
+ SG_ ADAS_LKA_LDW_SwtichSt : 7|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_LDW_ELK_WarningSt_L : 8|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_LDW_ELK_WarningSt_R : 9|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_LKA_WarningSt_L : 11|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_LKA_WarningSt_R : 13|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_ELK_SwtichSt : 15|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_ELK_WorkSt : 18|3@0+ (1,0) [0|7] "" GWM,TEL
+ SG_ ADAS_TSR_SpdlimType : 21|3@0+ (1,0) [0|7] "" GWM,TEL
+ SG_ ADAS_TSR_OverSpeedSwtichSt : 23|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_TSR_SpdLimit : 28|5@0+ (1,0) [0|31] "km/h" GWM,TEL
+ SG_ ADAS_TSR_WorkSt : 31|3@0+ (1,0) [0|7] "" GWM,TEL
+ SG_ ADAS_TSR_SLCAheadDis : 35|10@0+ (1,0) [0|1000] "m" GWM,TEL
+ SG_ ADAS_TSR_VisualWarning : 36|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_TSR_AcousticWarning : 37|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_TSR_SwtichSt : 39|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_TSR_ISDRestOfDis : 41|10@0+ (1,0) [0|1000] "km" GWM,TEL
+ SG_ ADAS_2_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,TEL
+
+BO_ 607 ADAS_5: 8 IDCU
+ SG_ ADAS_Reason_ACCUnableEnter : 12|5@0+ (1,0) [0|31] "" GWM,TEL
+ SG_ ADAS_ELK_ActiviationType : 15|3@0+ (1,0) [0|7] "" GWM,TEL
+ SG_ ADAS_Reason_ACCQuit : 20|5@0+ (1,0) [0|31] "" GWM,TEL
+ SG_ ADAS_Reason_NOAUnableEnter : 31|8@0+ (1,0) [0|15] "" GWM
+ SG_ ADAS_Reason_NOAQuit : 39|8@0+ (1,0) [0|15] "" GWM
+ SG_ ADAS_LCC_Voiceinfo : 44|5@0+ (1,0) [0|31] "" GWM,TEL
+ SG_ ADAS_LCC_takeover : 45|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_LCC_Textinfo : 51|4@0+ (1,0) [0|15] "" GWM,TEL
+ SG_ ADAS_5_MsgCounter : 55|4@0+ (1,0) [0|15] "" GWM,TEL
+ SG_ ADAS_5_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,TEL
+
+BO_ 608 IBCS_2_A: 8 IBCS
+ SG_ BCS_CST_ActiveSt : 0|1@0+ (1,0) [0|1] "" GWM,VCU
+ SG_ BCS_ABSActiveSt : 1|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_ABSFaultSt : 2|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_EBDFaultSt : 3|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_EBDActiveSt : 4|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_TCSFaultSt : 5|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_TCSActiveSt : 6|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_VDCFaultSt : 7|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_EngTorqDecFast : 15|8@0+ (0.392,0) [0|99.96] "%" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_CSTFaultSt : 17|2@0+ (1,0) [0|3] "" GWM,VCU
+ SG_ BCS_EngTorqInc : 31|8@0+ (0.392,0) [0|99.96] "%" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_VehSpd : 36|13@0+ (0.05625,0) [0|240] "km/h" GWM,IDCU,IFC,TEL,EPS,PAS,VCU
+ SG_ BCS_VehSpdVD : 37|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,EPS,PAS,VCU
+ SG_ BCS_EngTorqDecActiveSt : 38|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_ESPShiftInterference : 39|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_2_A_MsgCounter : 51|4@0+ (1,0) [0|15] "-" GWM,IDCU,IFC,TEL,EPS,PAS,VCU
+ SG_ BCS_EngTorqIncActiveSt : 52|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_VDCActiveSt : 53|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_BrkLightOn : 54|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,PAS
+ SG_ BCS_ESPShiftInterferenceVD : 55|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_2_A_Checksum : 63|8@0+ (1,0) [0|255] "-" GWM,IDCU,IFC,TEL,EPS,PAS,VCU
+
+BO_ 610 ADAS_18: 8 IDCU
+ SG_ ADAS_DOW_WarningSt_LeftForPSD : 0|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_DOW_WarningSt_RightForPSD : 1|1@0+ (1,0) [0|1] "" GWM,TEL
+
+BO_ 611 ADAS_6: 8 IDCU
+ SG_ ADAS_AEBTarMotionState : 5|2@0+ (1,0) [0|3] "m" GWM,TEL
+ SG_ ADAS_FCW_AEBTarDetSensor : 7|2@0+ (1,0) [0|3] "m" GWM,TEL
+ SG_ ADAS_AEBTarLongPos : 15|8@0+ (0.3,0) [0|76.5] "m" GWM,TEL
+ SG_ ADAS_AEBTarLongSpd : 23|8@0+ (0.5,-51) [-51|51] "m/s" GWM,TEL
+ SG_ ADAS_AEBTarLongAccel : 31|8@0+ (0.2,-25) [-25|25] "m/s2" GWM,TEL
+ SG_ ADAS_AEBTarLatSpd : 39|8@0+ (0.2,-25) [-25|25] "m/s" GWM,TEL
+ SG_ ADAS_AEBTarLatAccel : 47|8@0+ (0.2,-25) [-25|25] "m/s2" GWM,TEL
+ SG_ ADAS_AEBTarLatPos : 55|9@0+ (0.2,-25) [-25|25] "m" GWM,TEL
+ SG_ ADAS_AEBTarConfiLevel : 59|3@0+ (1,0) [0|7] "" GWM,TEL
+ SG_ ADAS_FCW_AEBTargetType : 62|3@0+ (1,0) [0|7] "m" GWM,TEL
+
+BO_ 612 EPS_SAS_1: 8 EPS
+ SG_ SAS_1_MsgCounter : 3|4@0+ (1,0) [0|15] "" GWM,IDCU,IFC,IBCS,PAS,VCU
+ SG_ SAS_1_Checksum : 7|4@0+ (1,0) [0|15] "" GWM,IDCU,IFC,IBCS,PAS,VCU
+ SG_ SAS_SteeringAngleVD : 8|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,IBCS,PAS,VCU
+ SG_ SAS_CalibratedSt : 9|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,IBCS,PAS,VCU
+ SG_ SAS_TrimmingStatus : 10|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS,VCU
+ SG_ SAS_InterStFlags : 15|5@0+ (1,0) [0|31] "" GWM,IBCS,VCU
+ SG_ SAS_SteeringAngleSpd : 23|8@0+ (4,0) [0|1016] "deg/sec" GWM,IDCU,IFC,TEL,IBCS,VCU
+ SG_ SAS_SteeringAngle : 31|16@0+ (0.1,-780) [-780|779.9] "deg" GWM,IDCU,IFC,TEL,IBCS,PAS,VCU
+
+BO_ 614 ADAS_13: 8 IDCU
+ SG_ ADAS_ESSSwitchSt : 1|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_FCTBSwitchSt : 3|2@0+ (1,0) [0|3] "" GWM
+ SG_ ADAS_LACCSwitchSt : 5|2@0+ (1,0) [0|3] "" GWM
+ SG_ ADAS_NEVSwitchSt : 7|2@0+ (1,0) [0|3] "" GWM
+ SG_ ADAS_MRBSwitchSt : 9|2@0+ (1,0) [0|3] "" GWM
+ SG_ ADAS_ERBSwitchSt : 11|2@0+ (1,0) [0|3] "" GWM
+ SG_ ADAS_ICVSwitchSt : 13|2@0+ (1,0) [0|3] "" GWM
+ SG_ ADAS_ESS_Intervention : 15|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_FCTBWorkSt : 18|3@0+ (1,0) [0|7] "" GWM
+ SG_ ADAS_LACCWorkSt : 21|3@0+ (1,0) [0|7] "" GWM
+ SG_ ADAS_NEVWorkSt : 23|2@0+ (1,0) [0|3] "" GWM
+ SG_ ADAS_MRBWorkSt : 25|2@0+ (1,0) [0|3] "" GWM
+ SG_ ADAS_ERBWorkSt : 27|2@0+ (1,0) [0|3] "" GWM
+ SG_ ADAS_ICVWorkSt : 29|2@0+ (1,0) [0|3] "" GWM
+ SG_ ADAS_FrontLiDAR_CalibrationSt : 31|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_FrontLiDAR_PriETHSt : 36|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_FrontLiDAR_SmearSt : 37|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_FrontLiDAR_BlockageSt : 38|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_FrontLiDAR_SensorFailureSt : 39|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_ESS_ActiveType : 40|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_13_MsgCounter : 51|4@0+ (1,0) [0|15] "" GWM,TEL
+ SG_ ADAS_ESSWorkSt : 54|3@0+ (1,0) [0|7] "" GWM,TEL
+ SG_ ADAS_13_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,TEL
+
+BO_ 615 GW_CDC_11_A: 8 GWM
+ SG_ CDC_ADAS_ESASwitchReq : 1|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_FCTBSwitchReq : 3|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_LACCSwitchReq : 5|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_NEVSwitchReq : 7|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_MRBSwitchReq : 9|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_ERBSwitchReq : 11|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_ICVSwitchReq : 13|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_NOAWCLCSwitchReq : 15|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_NOAOptimalLaneSwitchReq : 17|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ CDC_ADAS_NOAOpeButtonSwitchReq : 20|3@0+ (1,0) [0|3] "" IDCU,IFC
+
+BO_ 616 IBCS_3_A: 8 IBCS
+ SG_ BCS_BrkControllerTyp2 : 1|2@0+ (1,0) [0|3] "-" GWM,TEL,VCU
+ SG_ BCS_TargetRecpTorqRqSt : 3|2@0+ (1,0) [0|3] "" GWM,TEL,VCU
+ SG_ BCS_APAGrarLvlReq : 6|3@0+ (1,0) [0|7] "-" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_APAGrarLvlReqVD : 7|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_3_A_MsgCounter : 15|4@0+ (1,0) [0|15] "-" GWM,IDCU,IFC,TEL
+ SG_ BCS_TargetRecpTorqRq : 23|16@0+ (1,-32767) [-32767|32767] "Nm" GWM,TEL,VCU
+ SG_ BCS_APATorqReqEV : 37|14@0+ (1,-5000) [-5000|5000] "Nm" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_APATorqReqSt : 38|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_CrbsActive : 39|1@0+ (1,0) [0|1] "" GWM,TEL,VCU
+ SG_ BCS_RecpTorqCtrlSt : 48|1@0+ (1,0) [0|1] "" GWM,TEL,VCU
+ SG_ BCS_FullBattBrkActive : 49|1@0+ (1,0) [0|1] "" GWM,TEL,VCU
+ SG_ BCS_RegenModulationAvailable : 50|1@0+ (1,0) [0|1] "" GWM,TEL,VCU
+ SG_ BCS_RegenModuleActive : 51|1@0+ (1,0) [0|1] "" VCU
+ SG_ BCS_AVHSwitchSt : 55|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ BCS_3_A_Checksum : 63|8@0+ (1,0) [0|255] "-" GWM,IDCU,IFC,TEL
+
+BO_ 617 ADAS_7: 8 IDCU
+ SG_ ADAS_Obj0_Yspeed : 1|10@0+ (0.1,-45.5) [-45.4|45.5] "m/s" GWM,TEL,VCU
+ SG_ ADAS_Obj0_Yaccel : 6|5@0+ (0.2,-4) [-4|2] "m/s2" GWM,TEL,VCU
+ SG_ ADAS_Trktargt0St : 7|1@0+ (1,0) [0|1] "" GWM,TEL,VCU
+ SG_ ADAS_Obj0_Xdis : 23|8@0+ (0.1,-12.8) [-12.8|12.7] "m" GWM,TEL,VCU
+ SG_ ADAS_Obj0_Xspeed : 31|8@0+ (0.1,-12.8) [-12.8|12.7] "m/s" GWM,TEL,VCU
+ SG_ ADAS_Ob0j_Ydis : 39|10@0+ (0.2,0) [0|204.6] "m" GWM,TEL,VCU
+ SG_ ADAS_Ob1j_Ydis : 41|10@0+ (0.2,0) [0|204.6] "m" GWM,TEL
+ SG_ ADAS_Ob1j_Color : 43|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_Ob0j_Color : 45|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_Obj1_Xspeed : 63|8@0+ (0.1,-12.8) [-12.8|12.7] "m/s" GWM,TEL
+
+BO_ 618 IBCS_11_A: 8 IBCS
+ SG_ BCS_ActVehLongAccel : 7|12@0+ (0.027126736,-21.593) [-21.593|21.593] "m/s^2" GWM,IDCU,IFC,TEL,EPS,PAS,VCU
+ SG_ BCS_VehLongAccelOffset : 11|12@0+ (0.027126736,-21.593) [-21.593|21.593] "m/s^2" GWM,IDCU,IFC,TEL,EPS,VCU
+ SG_ BCS_ActVehLaltrlAccel : 31|12@0+ (0.027126736,-21.593) [-21.593|21.593] "m/s^2" GWM,IDCU,IFC,TEL,EPS,VCU
+ SG_ BCS_VehLaltrlAccelOffset : 35|12@0+ (0.027126736,-21.593) [-21.593|21.593] "m/s^2" GWM,IDCU,IFC,TEL,EPS,VCU
+ SG_ BCS_11_A_MsgCounter : 51|4@0+ (1,0) [0|15] "" GWM,IDCU,IFC,TEL,EPS
+ SG_ BCS_ActVehLongAccelVD : 52|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,EPS,VCU
+ SG_ BCS_ActVehLaltrlAccelVD : 53|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,EPS,VCU
+ SG_ BCS_TCSOff : 54|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,VCU
+ SG_ BCS_VDCOff : 55|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_11_A_Checksum : 63|8@0+ (1,0) [0|255] "-" GWM,IDCU,IFC,TEL,EPS
+
+BO_ 619 ADAS_8: 8 IDCU
+ SG_ ADAS_FrontCamera_L_CalibrationSt : 1|2@0+ (1,0) [0|3] "-" GWM,TEL
+ SG_ ADAS_FrontCamera_L_SensorFailureSt : 2|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_FrontCamera_L_CBlockageSt : 3|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_FrontCamera_R_CalibrationSt : 5|2@0+ (1,0) [0|3] "-" GWM,TEL
+ SG_ ADAS_FrontCamera_R_SensorFailureSt : 6|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_FrontCamera_R_CBlockageSt : 7|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_RearCamera_CalibrationSt : 9|2@0+ (1,0) [0|3] "-" GWM,TEL
+ SG_ ADAS_RearCamera_SensorFailureSt : 10|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_RearCamera_CBlockageSt : 11|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_SideFrontCamera_L_CalibrationSt : 13|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_SideFrontCamera_L_SensorFailureSt : 14|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_SideFrontCamera_L_CBlockageSt : 15|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_SideFrontCamera_R_CalibrationSt : 17|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_SideFrontCamera_R_SensorFailureSt : 18|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_SideFrontCamera_R_CBlockageSt : 19|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_SideRearCamera_L_CalibrationSt : 21|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_SideRearCamera_L_SensorFailureSt : 22|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_SideRearCamera_L_CBlockageSt : 23|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_SideRearCamera_R_CalibrationSt : 25|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_SideRearCamera_R_SensorFailureSt : 26|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_SideRearCamera_R_CBlockageSt : 27|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_FrontRadar_CalibrationSt : 29|2@0+ (1,0) [0|3] "-" GWM,TEL
+ SG_ ADAS_FrontRadar_SensorFailureSt : 30|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_FrontRadar_BlockageSt : 31|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_FrontRadar_PriCANSt : 32|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_SideFrontRadar_L_CalibrationSt : 34|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_SideFrontRadar_L_SensorFailureSt : 35|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_SideFrontRadar_L_CBlockageSt : 36|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_SideFrontRadar_L_PriCANSt : 37|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_SideFrontRadar_R_CalibrationSt : 39|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_SideFrontRadar_R_SensorFailureSt : 40|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_SideFrontRadar_R_CBlockageSt : 41|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_SideFrontRadar_R_PriCANSt : 42|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_SideRearRadar_L_CalibrationSt : 44|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_SideRearRadar_L_SensorFailureSt : 45|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_SideRearRadar_L_CBlockageSt : 46|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_SideRearRadar_L_PriCANSt : 47|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_SideRearRadar_R_CalibrationSt : 49|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_SideRearRadar_R_SensorFailureSt : 50|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_SideRearRadar_R_CBlockageSt : 51|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_SideRearRadar_R_PriCANSt : 52|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_HWSt : 53|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_ACCPlusSwitchSt : 55|2@0+ (1,0) [0|3] "-" GWM,TEL
+
+BO_ 620 IBCS_9_A: 8 IBCS
+ SG_ BCS_DrvMode : 2|3@0+ (1,0) [0|7] "" GWM,TEL,VCU
+ SG_ BCS_DrvModeAvailable : 3|1@0+ (1,0) [0|1] "" GWM,TEL,VCU
+ SG_ BCS_HBAActive : 4|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ BCS_FLWheelSpdVD : 5|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,EPS,VCU
+ SG_ BCS_FLWheelRotatedDirection : 6|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,VCU
+ SG_ BCS_FLWheelRotatedDirectionVD : 7|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,VCU
+ SG_ BCS_FLWheelSpd : 12|13@0+ (0.05625,0) [0|240] "km/h" GWM,IDCU,IFC,TEL,EPS,PAS,VCU
+ SG_ BCS_VMCYawRateAvlQuality : 15|3@0+ (1,0) [0|7] "" GWM,TEL
+ SG_ BCS_FRWheelSpd : 28|13@0+ (0.05625,0) [0|240] "km/h" GWM,IDCU,IFC,TEL,EPS,PAS,VCU
+ SG_ BCS_FRWheelRotatedDirectionVD : 29|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,VCU
+ SG_ BCS_FRWheelRotatedDirection : 30|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,VCU
+ SG_ BCS_FRWheelSpdVD : 31|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,EPS,VCU
+ SG_ BCS_VMCSASAvlQuality : 43|3@0+ (1,0) [0|7] "" GWM,TEL
+ SG_ BCS_FLWheelRotatedDirectionAPA : 45|2@0+ (1,0) [0|3] "" GWM,IDCU,IFC,TEL,PAS
+ SG_ BCS_FRWheelRotatedDirectionAPA : 47|2@0+ (1,0) [0|3] "" GWM,IDCU,IFC,TEL,PAS
+ SG_ BCS_9_A_MsgCounter : 51|4@0+ (1,0) [0|15] "" GWM,IDCU,IFC,TEL,EPS,VCU
+ SG_ BCS_PreAndRealVDCActiveSt : 52|1@0+ (1,0) [0|1] "-" GWM,TEL,VCU
+ SG_ BCS_VMCVehLongCtrAvlQuality : 55|3@0+ (1,0) [0|7] "" GWM,TEL
+ SG_ BCS_9_A_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,IDCU,IFC,TEL,EPS,VCU
+
+BO_ 621 IBCS_10_A: 8 IBCS
+ SG_ BCS_LSMPosLongACapbl : 1|2@0+ (1,0) [0|3] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_LSMSubMTReqEcho : 3|2@0+ (1,0) [0|3] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_CDDAPVehHoldActive : 4|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_RLWheelSpdVD : 5|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,EPS,VCU
+ SG_ BCS_RLWheelRotatedDirection : 6|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,VCU
+ SG_ BCS_RLWheelRotatedDirectionVD : 7|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,VCU
+ SG_ BCS_RLWheelSpd : 12|13@0+ (0.05625,0) [0|240] "km/h" GWM,IDCU,IFC,TEL,EPS,PAS,VCU
+ SG_ BCS_LSMSubMTLevelEcho : 14|2@0+ (1,0) [0|3] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_LSMSubMTReqAvailable : 15|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_RRWheelSpd : 28|13@0+ (0.05625,0) [0|240] "km/h" GWM,IDCU,IFC,TEL,EPS,PAS,VCU
+ SG_ BCS_RRWheelRotatedDirectionVD : 29|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,VCU
+ SG_ BCS_RRWheelRotatedDirection : 30|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,VCU
+ SG_ BCS_RRWheelSpdVD : 31|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,EPS,VCU
+ SG_ BCS_LSMSubMTLongEcho : 41|2@0+ (1,0) [0|3] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_LSM12ComfortAvl : 43|2@0+ (1,0) [0|3] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_RLWheelRotatedDirectionAPA : 45|2@0+ (1,0) [0|3] "" GWM,IDCU,IFC,TEL,PAS
+ SG_ BCS_RRWheelRotatedDirectionAPA : 47|2@0+ (1,0) [0|3] "" GWM,IDCU,IFC,TEL,PAS
+ SG_ BCS_10_A_MsgCounter : 51|4@0+ (1,0) [0|15] "" GWM,IDCU,IFC,TEL,EPS,VCU
+ SG_ BCS_LSM12EmergencyAvl : 53|2@0+ (1,0) [0|3] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_LSM23Avl : 55|2@0+ (1,0) [0|3] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_10_A_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,IDCU,IFC,TEL,EPS,VCU
+
+BO_ 622 ADAS_9: 8 IDCU
+ SG_ ADAS_IntelligentEvasionWorkSt : 2|3@0+ (1,0) [0|7] "" GWM,TEL
+ SG_ ADAS_HandsoffSt : 3|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_IEVInterventionSt : 9|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_IntelligentEvasionSwtichSt : 11|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_ISLACC_ReqSt : 12|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_TCPSt : 15|3@0+ (1,0) [0|7] "" GWM,TEL
+ SG_ ADAS_TCPSessionID : 21|4@0+ (1,0) [0|15] "" GWM,TEL
+ SG_ ADAS_VCAAvail : 22|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_TCPAvail : 23|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_NOAAvail : 24|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_DCLCAvail : 25|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ ADAS_Reason_LCCUnableEnter : 34|5@0+ (1,0) [0|31] "" GWM,TEL
+ SG_ ADAS_Reason_LCCQuit : 39|5@0+ (1,0) [0|31] "" GWM,TEL
+ SG_ ADAS_Reason_DCLC_Cancel : 40|5@0+ (1,0) [0|31] "" GWM,TEL
+ SG_ ADAS_Reason_DCLC_Wati : 45|5@0+ (1,0) [0|31] "" GWM,TEL
+
+BO_ 624 VCU_1_A: 8 VCU
+ SG_ VCU_RecpFactorCfgResp_A : 1|4@0+ (1,0) [0|15] "-" TEL
+ SG_ VCU_DrvFactorCfgResp_A : 6|4@0+ (1,0) [0|15] "-" IDCU,IFC
+ SG_ VCU_HydBrkTorqReq_A : 23|15@0+ (1,0) [0|30000] "" IBCS
+ SG_ VCU_DecToStopActiveVld_A : 32|1@0+ (1,0) [0|1] "" IBCS
+ SG_ VCU_SPAAvailable_A : 33|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ VCU_SPAWarnState_A : 37|4@0+ (1,0) [0|15] "" TEL,PAS
+ SG_ VCU_LongCtrlDecToStopReq_A : 38|1@0+ (1,0) [0|1] "" IBCS
+ SG_ VCU_HydBrkTorqReqSt_A : 42|3@0+ (1,0) [0|7] "" IBCS
+ SG_ VCU_HydBrkButtonSt_A : 44|2@0+ (1,0) [0|3] "-" IBCS
+ SG_ VCU_HydBrkTorqReqStVd_A : 47|1@0+ (1,0) [0|1] "" IBCS
+ SG_ VCU_1_A_MsgCounter : 51|4@0+ (1,0) [0|15] "" IDCU,IFC,IBCS
+ SG_ VCU_1_A_Checksum : 63|8@0+ (1,0) [0|255] "" IDCU,IFC,IBCS
+
+BO_ 626 ADAS_11: 8 IDCU
+ SG_ ADAS_Obj1_Yaccel : 6|7@0+ (0.2,-12.5) [-12.5|12.5] "m/s2" GWM,TEL,IBCS
+ SG_ ADAS_Trktargt1St : 7|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS
+ SG_ ADAS_Obj1_Yspeed : 15|8@0+ (0.3,-38.5) [-38.5|38] "m/s" GWM,TEL,IBCS
+ SG_ ADAS_Obj1_Xdis : 23|8@0+ (0.1,-12.8) [-12.8|12.7] "m" GWM,TEL,IBCS
+ SG_ ADAS_Obj2_Yaccel : 30|7@0+ (0.2,-12.5) [-12.5|12.5] "m/s2" GWM,TEL,IBCS
+ SG_ ADAS_Trktargt2St : 31|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS
+ SG_ ADAS_Obj2_Yspeed : 39|8@0+ (0.3,-38.5) [-38.5|38] "m/s" GWM,TEL,IBCS
+ SG_ ADAS_Obj2_Xdis : 47|8@0+ (0.1,-12.8) [-12.8|12.7] "m" GWM,TEL,IBCS
+ SG_ ADAS_Obj2_Xspeed : 55|8@0+ (0.1,-12.8) [-12.8|12.7] "m/s" GWM,TEL,IBCS
+ SG_ ADAS_Obj3_Yspeed : 63|8@0+ (0.3,-38.5) [-38.5|38] "m/s" GWM,TEL,IBCS
+
+BO_ 627 ADAS_12: 8 IDCU
+ SG_ ADAS_Obj3_Yaccel : 6|7@0+ (0.2,-12.5) [-12.5|12.5] "m/s2" GWM,TEL
+ SG_ ADAS_Trktargt3St : 7|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_Obj3_Xdis : 15|8@0+ (0.1,-12.8) [-12.8|12.7] "m" GWM,TEL
+ SG_ ADAS_Obj3_Xspeed : 23|8@0+ (0.1,-12.8) [-12.8|12.7] "m/s" GWM,TEL
+ SG_ ADAS_Obj3_Ydis : 31|10@0+ (0.2,0) [0|204.6] "m" GWM,TEL
+ SG_ ADAS_Ob2j_Ydis : 33|10@0+ (0.2,0) [0|204.6] "m" GWM,TEL
+ SG_ ADAS_Ob3j_Color : 35|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_Ob2j_Color : 37|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_LLnMrkingPolyCoeffA0 : 50|11@0+ (0.01,-10.23) [-10.23|10.23] "m" GWM,TEL
+ SG_ ADAS_LLnMarkingType : 52|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ ADAS_RLnMarkingType : 54|2@0+ (1,0) [0|3] "" GWM,TEL
+
+BO_ 628 IDCU_PCS_1: 8 IDCU
+ SG_ IDCU_PCS_SystemSt : 0|1@0+ (1,0) [0|1] "" GWM
+ SG_ IDCU_PCS_VRSwitchFailSt : 1|1@0+ (1,0) [0|1] "" GWM
+ SG_ IDCU_PCS_FrontCameraFail : 2|1@0+ (1,0) [0|1] "" GWM
+ SG_ IDCU_PCS_LeftCameraFail : 3|1@0+ (1,0) [0|1] "" GWM
+ SG_ IDCU_PCS_RightCameraFail : 4|1@0+ (1,0) [0|1] "" GWM
+ SG_ IDCU_PCS_RearCameraFail : 5|1@0+ (1,0) [0|1] "" GWM
+ SG_ IDCU_PCS_SystemType : 11|2@0+ (1,0) [0|3] "" GWM
+ SG_ IDCU_PCS_CalibrateSt : 14|3@0+ (1,0) [0|7] "" GWM
+ SG_ PAA_VideoSt : 18|3@0+ (1,0) [0|7] "" GWM
+ SG_ IDCU_PCS_ACU_APKDisplayReq : 19|1@0+ (1,0) [0|1] "" GWM
+ SG_ IDCU_PCS_SingleViewInd : 23|4@0+ (1,0) [0|15] "" GWM
+ SG_ IDCU_PCS_MODEnalbe : 38|1@0+ (1,0) [0|1] "" GWM
+ SG_ IDCU_PCS_3DEnalbe : 39|1@0+ (1,0) [0|1] "" GWM
+ SG_ IDCU_PCS_OperationSt : 47|8@0+ (1,0) [0|255] "" GWM
+ SG_ IDCU_PCS_ACU_DisplayReq : 56|1@0+ (1,0) [0|1] "" GWM
+ SG_ IDCU_PCS_PASButtonPress : 59|1@0+ (1,0) [0|1] "" GWM
+ SG_ IDCU_PCS_MMIAPAConfirmButton : 61|2@0+ (1,0) [0|3] "" GWM
+ SG_ IDCU_PCS_MMIAPAFuncSelect : 63|2@0+ (1,0) [0|3] "" GWM
+
+BO_ 629 GW_BDC_PEPS_2_A: 8 GWM
+ SG_ PEPS_OffWarning : 0|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_EngSt : 1|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_AuthFailWarning : 3|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ PEPS_OpIndicationWarning : 6|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ PEPS_DeactivationWarning : 7|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_SSBWarning : 9|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ PEPS_ESCLWarning : 12|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ PEPS_FobBattLowWarning : 13|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_DoorLockWarning : 15|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ PEPS_KeyReminderWarning : 17|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ PEPS_KeyOutWarning : 19|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ PEPS_VoiceInputWarning : 20|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_ETWS_St : 21|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_WheelSpdInputWarn : 22|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_Crankallow : 23|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_SysPowMode_Rddy : 25|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ PEPS_SysPowMode_RddyVD : 26|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_ESCLBoltSt : 27|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_VVS_QF : 30|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ PEPS_EngForbidWarn : 31|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_DriverCapaLockSt : 32|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_DriverCapaUnlockSt : 33|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_PsngrCapaLockSt : 34|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_PsngrCapaUnlockSt : 35|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_RLCapaLockSt : 36|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_RLCapaUnlockSt : 37|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_RRCapaLockSt : 38|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_RRCapaUnlockSt : 39|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_ACCRelaySt : 40|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_IG1RelaySt : 41|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_StarterRelaySt : 43|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_IG1RelayStVD : 44|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_IGNFbkSt : 45|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_IGNFbkStVD : 46|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_IdInVehicleWarning : 47|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_SATOWarning : 48|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_IG1FailWarn : 49|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_RemoteControlSt : 50|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_ESCLInhabitSt : 51|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_2_MsgCounter : 55|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ PEPS_2_Checksum : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 630 VCU_3_A: 8 VCU
+ SG_ VCU_VehTP_A : 15|8@0+ (1,0) [0|255] "" IDCU,IFC
+ SG_ VCU_RvsProtResp_A : 59|2@0+ (1,0) [0|3] "-" IDCU
+ SG_ VCU_RvsProtAvail_A : 60|1@0+ (1,0) [0|1] "-" IDCU
+ SG_ VCU_RvsProtCtrlActive_A : 62|2@0+ (1,0) [0|3] "-" IDCU
+
+BO_ 634 IBCS_16_A: 8 IBCS
+ SG_ BCS_BrkPr : 7|12@0+ (0.1,0) [0|250] "bar" TEL
+ SG_ BCS_MotorSpd : 9|10@0+ (1,-120) [-120|300] "mm/s" TEL
+ SG_ BCS_BrkPrVD : 11|1@0+ (1,0) [0|1] "" TEL
+ SG_ BCS_MotorTravel : 31|8@0+ (0.25,-5) [-5|50] "" TEL
+ SG_ BCS_16_A_MsgCounter : 35|4@0+ (1,0) [0|15] "-" Vector__XXX
+ SG_ BCS_VehAccelOvrGrnd : 47|12@0+ (0.01,-15) [-15|15] "m/s2" Vector__XXX
+ SG_ BCS_16_A_Checksum : 63|8@0+ (1,0) [0|255] "-" GWM
+
+BO_ 635 IBCS_17_A: 8 IBCS
+ SG_ BCS_MaxEstimatedWheelPres : 23|8@0+ (1,0) [0|250] "bar" Vector__XXX
+ SG_ BCS_17_A_MsgCounter : 31|4@0+ (1,0) [0|15] "-" Vector__XXX
+ SG_ BCS_17_A_Checksum : 63|8@0+ (1,0) [0|255] "-" Vector__XXX
+
+BO_ 641 GW_CDC_7_A: 8 GWM
+ SG_ CDC_Longitude : 7|13@0+ (0.01,73.66) [0|155.57] "\A1\E3\22\20\49\44\43\55\2C\49\46\43\0D\0A\20\53\47\5F\20\43\44\43\5F\41\74\74\69\74\75\64\65\20\3A\20\31\30\7C\31\33\40\30\2B\20\28\30\2E\30\31\2C\33\2E\38\36\29\20\5B\30\7C\38\35\2E\37\37\5D\20\22\A1\E3" IDCU,IFC
+
+BO_ 644 IBCS_EBB_3_A: 8 IBCS
+ SG_ EBB_WarnLamp : 1|2@0+ (1,0) [0|3] "" GWM
+ SG_ EBB_BrkPedalModeCfgSt : 3|2@0+ (1,0) [0|3] "" GWM
+ SG_ EBB_3_A_MsgCounter : 7|4@0+ (1,0) [0|15] "" GWM
+ SG_ EBB_vehicleInfo : 10|1@0+ (1,0) [0|1] "" GWM
+ SG_ EBB_3_A_Checksum : 63|8@0+ (1,0) [0|255] "" GWM
+
+BO_ 652 IBCS_8_A: 8 IBCS
+ SG_ BCS_MasterCylinderPr : 3|12@0+ (0.1,0) [0|250] "bar" GWM,IDCU,IFC,TEL,VCU
+ SG_ BCS_NoBrakeForce : 4|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_BrakeOverHeat : 5|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_MasterCylinderPrVD : 6|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,VCU
+ SG_ BCS_MasterCylinderPrOffsetVD : 7|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,VCU
+ SG_ BCS_MasterCylinderPrOffset : 17|10@0+ (0.1,-15) [-15|15] "bar" GWM,IDCU,IFC,TEL,VCU
+ SG_ BCS_ABAactive : 18|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_ABAavailable : 19|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_8_A_MsgCounter : 23|4@0+ (1,0) [0|15] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_ABPActive : 32|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_ABPAvailable : 33|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_AEBActive : 34|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_AEBAvailable : 35|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_AWBActive : 36|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_AWBAvailable : 37|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_CDDActive : 38|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_CDDAvailable : 39|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_CDDSActiveVehHold : 40|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ BCS_VehicleStandStillSt : 42|2@0+ (1,0) [0|3] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_AEBIBActive : 43|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ BCS_AEBBAActive : 44|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ BCS_AWBFeedback : 45|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ BCS_VLCPreventFuelCutOff : 46|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ BCS_CDDFail : 47|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_QDCACC : 49|2@0+ (1,0) [0|3] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_HazardActiveReq : 52|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ BCS_WarnLamp : 55|2@0+ (1,0) [0|3] "" GWM,TEL,VCU
+ SG_ BCS_8_A_Checksum : 63|8@0+ (1,0) [0|255] "-" GWM,IDCU,IFC,TEL
+
+BO_ 660 IBCS_7_A: 8 IBCS
+ SG_ BCS_HHCCtrlSt : 18|1@0+ (1,0) [0|1] "" GWM,TEL,VCU
+ SG_ BCS_HDCCtrlSt : 20|2@0+ (1,0) [0|3] "-" GWM,IDCU,IFC,TEL,VCU
+ SG_ BCS_HHCErrSt : 21|1@0+ (1,0) [0|1] "-" GWM,TEL,VCU
+ SG_ BCS_HDCErrSt : 22|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,VCU
+ SG_ BCS_VLCActive : 23|1@0+ (1,0) [0|1] "" GWM,TEL,VCU
+ SG_ BCS_CruiseCtrlCancelReq : 24|1@0+ (1,0) [0|1] "-" GWM,TEL,VCU
+ SG_ BCS_CDPAvailable : 25|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ BCS_CDPIntervention : 26|1@0+ (1,0) [0|1] "-" GWM,TEL
+ SG_ BCS_7_A_MsgCounter : 30|4@0+ (1,0) [0|15] "-" GWM,IDCU,IFC,TEL
+ SG_ BCS_VehSASOffset : 39|14@0+ (0.1,-780) [-780|780] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_VLCFail : 48|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ BCS_ParkingReqToEPB : 50|2@0+ (1,0) [0|3] "" GWM,TEL,VCU
+ SG_ BCS_AVHSt : 51|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,VCU
+ SG_ BCS_AVHStandby : 52|1@0+ (1,0) [0|1] "" GWM,TEL,VCU
+ SG_ BCS_AVHAvailable : 53|1@0+ (1,0) [0|1] "" GWM,TEL,VCU
+ SG_ BCS_VLCEngTorqReqAct : 54|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ BCS_VLCTempOff : 55|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ BCS_7_A_Checksum : 63|8@0+ (1,0) [0|255] "-" GWM,IDCU,IFC,TEL
+
+BO_ 662 GW_CDC_ICM_1_A: 8 GWM
+ SG_ ICM_DisplayID : 11|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ ICM_DispTheme : 14|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ ICM_Radar : 15|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ ICM_DriveMode : 18|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ ICM_MFSButtonSt : 22|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ ICM_SoundWarningSilenceReq : 23|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ ICM_Type : 27|4@0+ (1,0) [0|15] "" Vector__XXX
+ SG_ ICM_SyncBootAnimation : 30|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ ICM_DistanceUnitDisp : 31|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ ICM_SetIACCSt : 47|1@0+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 683 VCU_9_A: 8 VCU
+ SG_ VCU_MaxRecpTorq_A : 7|11@0+ (2,0) [0|4000] "Nm" TEL,IBCS
+ SG_ VCU_RecpTorq_A : 10|11@0+ (2,0) [0|4000] "Nm" IDCU,IFC,IBCS
+ SG_ VCU_RecpTorqVD_A : 11|1@0+ (1,0) [0|1] "" IDCU,IFC,IBCS
+ SG_ VCU_MaxRecpTorqVD_A : 12|1@0+ (1,0) [0|1] "" IBCS
+ SG_ VCU_PWTMode_A : 24|1@0+ (1,0) [0|1] "" IBCS
+ SG_ VCU_PWTMode1_A : 26|2@0+ (1,0) [0|3] "" IBCS
+ SG_ VCU_BrkPedPstVD_A : 27|1@0+ (1,0) [0|1] "" IDCU,IFC,IBCS
+ SG_ VCU_9_A_MsgCounter : 31|4@0+ (1,0) [0|15] "" IDCU,IFC,IBCS,PAS
+ SG_ VCU_BrkVcuuPress_A : 33|10@0+ (1,0) [0|1023] "hpa" TEL
+ SG_ VCU_BrkVcuuPressVD_A : 34|1@0+ (1,0) [0|1] "-" IBCS
+ SG_ VCU_CrntGearLvlVD_A : 35|1@0+ (1,0) [0|1] "" IDCU,IFC,TEL,EPS
+ SG_ VCU_CrntGearLvl_A : 38|3@0+ (1,0) [0|7] "" IDCU,IFC,TEL,EPS,IBCS,PAS
+ SG_ VCU_FullBattBrkReq : 39|1@0+ (1,0) [0|1] "" IBCS
+ SG_ VCU_BrkPedPst_A : 55|8@0+ (0.392,0) [0|99.96] "%" IDCU,IFC,IBCS
+ SG_ VCU_9_A_Checksum : 63|8@0+ (1,0) [0|255] "" IDCU,IFC,IBCS,PAS
+
+BO_ 689 VCU_13_A: 8 VCU
+ SG_ VCU_APAWheelTorqDriverReq_A : 7|14@0+ (1,-5000) [-5000|5000] "Nm" GWM,IDCU,IFC,TEL,PAS
+ SG_ VCU_APAGasPedalIntv_A : 8|1@0+ (1,0) [0|1] "-" IDCU,IFC,IBCS
+ SG_ VCU_APAAvailable_A : 9|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,TEL,IBCS,PAS
+ SG_ VCU_ACCMaxRecpDecel_A : 23|8@0+ (0.05,-5) [-5|7.75] "m/s2" IDCU,IFC
+ SG_ VCU_ACCLimitOperatingSt_A : 25|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ VCU_ACCMaxRecpDecelVD_A : 26|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ VCU_LateralAssistBtnInfo_A : 27|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ VCU_LateralAssistBtnInfoVD_A : 28|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ VCU_APA_Resp_A : 29|1@0+ (1,0) [0|1] "" IDCU,IFC,IBCS,PAS
+ SG_ VCU_APAGearIntervern_A : 30|1@0+ (1,0) [0|1] "-" IDCU,IFC,IBCS
+ SG_ VCU_RegenModulationReq_A : 31|1@0+ (1,0) [0|1] "-" IBCS
+ SG_ VCU_ActVehWheelTorq_A : 39|14@0+ (1,0) [0|10000] "Nm" IDCU,IFC,TEL,PAS
+ SG_ VCU_13_A_MsgCounter : 51|4@0+ (1,0) [0|15] "-" IDCU,IFC,PAS
+ SG_ VCU_ACCmaxSpdLimit_A : 55|4@0+ (1,0) [0|15] "" IDCU,IFC
+ SG_ VCU_13_A_Checksum : 63|8@0+ (1,0) [0|205] "-" IDCU,IFC,PAS
+
+BO_ 697 VCU_8_A: 8 VCU
+ SG_ VCU_DCU_ActRotSpd_A : 7|16@0+ (1,-32767) [-32767|32766] "rpm" IDCU,IFC,IBCS
+ SG_ VCU_TorqDriverReq_A : 23|8@0+ (0.392,0) [0|99.96] "%" IBCS
+ SG_ VCU_8_A_MsgCounter : 31|4@0+ (1,0) [0|15] "" IBCS
+ SG_ VCU_VehActDrvTorq_A : 39|8@0+ (0.392,0) [0|99.96] "%" IBCS
+ SG_ VCU_MaxVehTorqNorm_A : 40|9@0+ (10,0) [0|5100] "Nm" IBCS
+ SG_ VCU_VehActDrvTorqVD_A : 42|1@0+ (1,0) [0|1] "" IBCS
+ SG_ VCU_ParkingReqToEPBVD_A : 43|1@0+ (1,0) [0|1] "" IBCS
+ SG_ VCU_ParkingReqToEPB_A : 47|2@0+ (1,0) [0|3] "" IBCS
+ SG_ VCU_8_A_Checksum : 63|8@0+ (1,0) [0|255] "" IBCS
+
+BO_ 730 IFC_FAPA_1_B: 8 IDCU
+ SG_ FAPA_APAActFuncInd : 3|4@0+ (1,0) [0|15] "" GWM,IBCS
+ SG_ FAPA_APAAuthst : 5|2@0+ (1,0) [0|3] "" GWM
+ SG_ FAPA_PASCommandDoorsUnlock : 8|1@0+ (1,0) [0|1] "" GWM
+ SG_ FAPA_RPAReady : 11|1@0+ (1,0) [0|1] "" GWM
+ SG_ FAPA_IGOffReqEnable : 12|1@0+ (1,0) [0|1] "" GWM
+ SG_ FAPA_RearMirrorFoldReq : 13|1@0+ (1,0) [0|1] "" GWM
+ SG_ FAPA_RearMirrorUnfoldReq : 14|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ FAPA_HornReq : 18|1@0+ (1,0) [0|1] "" GWM
+ SG_ FAPA_IGOffReqEnableVD : 29|1@0+ (1,0) [0|1] "" GWM
+ SG_ FAPA_1_B_MsgCounter : 51|4@0+ (1,0) [0|15] "" GWM,TEL
+ SG_ FAPA_1_B_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,TEL
+
+BO_ 732 IFC_FAPA_2: 8 IDCU
+ SG_ FAPA_EPBEmergencyBrk : 1|2@0+ (1,0) [0|3] "" GWM,TEL,IBCS,PAS,VCU
+ SG_ FAPA_EPBEmergencyBrkVD : 3|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS,VCU
+
+BO_ 733 ADAS_FCTB_1: 8 IDCU
+ SG_ ADAS_FCTBTargetDecel : 7|8@0+ (0.05,-10) [-10|2.75] "m/s2" GWM,TEL,IBCS,PAS
+ SG_ ADAS_FCTBBrkReq : 12|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS,PAS
+ SG_ ADAS_FCTBBrkgVld : 13|1@0+ (1,0) [0|1] "" GWM,TEL,IBCS,PAS
+ SG_ ADAS_FCTBPrefillReq : 15|2@0+ (1,0) [0|3] "" GWM,TEL,IBCS,PAS
+ SG_ ADAS_FCTB_1_MsgCounter : 51|4@0+ (1,0) [0|15] "" GWM,TEL,IBCS,PAS
+ SG_ ADAS_FCTB_1_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,TEL,IBCS,PAS
+
+BO_ 760 GW_PADS_1_A: 8 GWM
+ SG_ PADS_ACU_ModeBtnSt : 0|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ACU_ModeBtnStVD : 1|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ACU_VolIncBtnSt : 2|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ACU_VolIncBtnStVD : 3|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ACU_VolDecBtnSt : 4|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ACU_VolDecBtnStVD : 5|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ACU_SkipIncBtnSt : 6|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ACU_SkipIncBtnStVD : 7|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ACU_SkipDecBtnSt : 8|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ACU_SkipDecBtnStVD : 9|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ACU_CHSkipslideBtnSt : 11|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ PADS_ACU_CHSkipslideBtnStVD : 12|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ICM_ViewBtnSt : 13|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ICM_ViewBtnStVD : 14|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ACU_VrBtnSt : 15|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ACU_VrBtnStVD : 16|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ACU_PhoneBtnSt : 17|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ACU_PhoneBtnStVD : 18|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ACU_CusBtnSt : 19|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ACU_CusBtnStVD : 20|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ICM_DowmBtnSt : 21|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ICM_DowmBtnStVD : 22|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ICM_OkBtnSt : 23|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ICM_OkBtnStVD : 24|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_ICM_SkipslideBtnSt : 26|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ PADS_ICM_SkipslideBtnStVD : 27|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_CruBtnSt : 28|1@0+ (1,0) [0|1] "" TEL,VCU
+ SG_ PADS_CruBtnStVD : 29|1@0+ (1,0) [0|1] "" TEL,VCU
+ SG_ PADS_CruSpeedDecBtnSt : 30|1@0+ (1,0) [0|1] "" IDCU,IFC,TEL,VCU
+ SG_ PADS_CruSpeedDecBtnStVD : 31|1@0+ (1,0) [0|1] "" IDCU,IFC,TEL,VCU
+ SG_ PADS_CruResumeSpeedIncBtnSt : 32|1@0+ (1,0) [0|1] "" IDCU,IFC,TEL,VCU
+ SG_ PADS_CruResumeSpeedIncBtnStVD : 33|1@0+ (1,0) [0|1] "" IDCU,IFC,TEL,VCU
+ SG_ PADS_CruTauGapBtnSt : 34|1@0+ (1,0) [0|1] "" IDCU,IFC,TEL
+ SG_ PADS_CruTauGapBtnStVD : 35|1@0+ (1,0) [0|1] "" IDCU,IFC,TEL
+ SG_ PADS_CruTJAICABtnSt : 36|1@0+ (1,0) [0|1] "" TEL
+ SG_ PADS_CruTJAICABtnStVD : 37|1@0+ (1,0) [0|1] "" TEL
+ SG_ PADS_LSwitchBtnstuckSt : 38|1@0+ (1,0) [0|1] "" TEL,VCU
+ SG_ PADS_ACU_VOLSkipslideBtnSt : 41|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ PADS_ACU_VOLSkipslideBtnStVD : 42|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ PADS_1_MsgCounter : 51|4@0+ (1,0) [0|15] "" IDCU,IFC,TEL
+ SG_ PADS_1_Checksum : 63|8@0+ (1,0) [0|255] "" IDCU,IFC,TEL
+
+BO_ 796 GW_BDC_BCM_BCAN_4_A: 8 GWM
+ SG_ BCM_RemoteCtrlFDMRMCfgSt : 0|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_FogLampTurnCfgSt : 1|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_RemoteUnlockCfgSt : 2|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_SpdAutoLockCfgSt : 3|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_AutoUnlockCfgSt : 5|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ BCM_FollowMeHomeCfgSt : 7|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ BCM_AutoLightSnsCfgSt : 10|3@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ BCM_FrontWiperSerPstFuncCfgSt : 11|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_RGearEnableRearWipeCfgSt : 12|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_DTRLFuncCfgSt : 13|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_HornCfgSt : 14|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_OSRMAutoFoldCfgSt : 15|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_IGNOffTime : 23|10@0+ (1,0) [0|1000] "min" Vector__XXX
+ SG_ BCM_IALFuncCfgSt : 24|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_AutoWiperCfgSt : 25|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_AutoDomeLightCfgSt : 27|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_IGNOffTimeVD : 29|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_AutoSRWinCloseCfgSt : 35|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_RLSAutoSRWinCloseCfgSt : 36|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_HeadlightDelayCfgSt : 37|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_LatestLockUnlockCmd : 44|5@0+ (1,0) [0|31] "" Vector__XXX
+ SG_ BCM_ParkAutoUnlockCfgSt : 46|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ BCM_TrunklightSt : 47|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_WelcomelampSt : 48|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_BackLightLevel : 52|4@0+ (1,0) [0|7] "" Vector__XXX
+ SG_ BCM_LOGOLightSt : 53|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_CentralUnLockSWSt : 54|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BDC_WelcomelampCfgSt : 57|2@0+ (1,0) [0|3] "-" Vector__XXX
+ SG_ BDC_LOGOLightCfgSt : 59|2@0+ (1,0) [0|3] "-" Vector__XXX
+
+BO_ 806 GW_CDC_ACU_29_B_A: 8 GWM
+ SG_ ACU_AccountDelete : 7|8@0+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 814 GW_CDC_ACU_10_A_A: 8 GWM
+ SG_ ACU_IFC_SpeedLimit : 7|8@0+ (1,0) [0|255] "km/h" IDCU,IFC,TEL
+ SG_ ACU_IFC_ISDRestOfdis : 15|8@0+ (1,0) [0|70] "km" IDCU,IFC
+ SG_ ACU_IFC_OfframpDis : 21|6@0+ (50,0) [0|3000] "m" IDCU,IFC
+ SG_ ACU_IFC_SpeedLimitUnit : 23|2@0+ (1,0) [0|3] "-" IDCU,IFC
+ SG_ ACU_IFC_RoadType : 27|4@0+ (1,0) [0|15] "-" IDCU,IFC,TEL
+ SG_ ACU_IFC_SpeedLimtType : 31|4@0+ (1,0) [0|15] "" IDCU,IFC
+ SG_ ACU_IFC_NaviCorp : 34|3@0+ (1,0) [0|7] "" IDCU,IFC
+ SG_ ACU_IFC_NaviSt : 36|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ ACU_IFC_ZoneCode : 39|3@0+ (1,0) [0|7] "-" IDCU,IFC
+ SG_ ACU_IFC_OfframpSt : 40|1@0+ (1,0) [0|1] "-" IDCU,IFC
+ SG_ ACU_IFC_NaviNewIconDis : 46|5@0+ (0.05,0) [0|3] "km" IDCU,IFC
+ SG_ ACU_IFC_NaviNewIcon : 55|4@0+ (1,0) [0|15] "-" IDCU,IFC
+ SG_ ACU_IFC_SLCAheadDis : 63|8@0+ (5,0) [0|1250] "m" IDCU,IFC,TEL
+
+BO_ 835 PAS_1: 8 IDCU
+ SG_ PAS_SystemType : 1|2@0+ (1,0) [0|3] "" GWM,TEL,VCU
+ SG_ PAS_SysFailureFlag : 3|2@0+ (1,0) [0|3] "" GWM,IFC,TEL
+ SG_ PAS_WarnTone : 7|4@0+ (1,0) [0|15] "" GWM,IFC,TEL
+ SG_ PAS_ButtonPress : 8|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ PAS_SideZoneStatusF : 13|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ PAS_SideZoneStatusR : 15|2@0+ (1,0) [0|3] "" GWM,TEL
+ SG_ PAS_RRMidDistance : 23|8@0+ (2,0) [0|510] "cm" GWM,IFC,TEL,VCU
+ SG_ PAS_RLMidDistance : 31|8@0+ (2,0) [0|510] "cm" GWM,IFC,TEL,VCU
+ SG_ PAS_RRDistance : 39|8@0+ (2,0) [0|510] "cm" GWM,IFC,TEL,VCU
+ SG_ PAS_RLDistance : 47|8@0+ (2,0) [0|510] "cm" GWM,IFC,TEL,VCU
+ SG_ PAS_RSLSideDistance : 55|8@0+ (2,0) [0|510] "cm" GWM,IFC,TEL,VCU
+ SG_ PAS_RSRSideDistance : 63|8@0+ (2,0) [0|510] "cm" GWM,IFC,TEL,VCU
+
+BO_ 836 GW_CDC_PCS_1_A: 8 GWM
+ SG_ PCS_SystemSt : 0|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ PCS_VRSwitch_FailSt : 1|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_FrontCameraFail : 2|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_LeftCameraFail : 3|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_RightCameraFail : 4|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_RearCameraFail : 5|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_OverlayOpFail : 9|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_SystemType : 11|2@0+ (1,0) [0|3] "" PAS
+ SG_ PCS_CalibrateSt : 14|3@0+ (1,0) [0|7] "" PAS
+ SG_ PCS_EventRecordSt : 15|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_ACU_APKDisplayReq : 19|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_SingleViewInd : 23|4@0+ (1,0) [0|15] "" PAS
+ SG_ PCS_VoiceReq : 27|4@0+ (1,0) [0|15] "" PAS
+ SG_ PCS_DriveDirInd : 29|2@0+ (1,0) [0|3] "" PAS
+ SG_ PCS_GuidOverlaySt : 31|2@0+ (1,0) [0|3] "" PAS
+ SG_ PCS_SteerWheelTurnDirInd : 33|2@0+ (1,0) [0|3] "" PAS
+ SG_ PCS_SteerIconInd : 36|3@0+ (1,0) [0|7] "" PAS
+ SG_ PCS_PGSEnable : 37|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_MODEnalbe : 38|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_3DEnalbe : 39|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_OperationSt : 47|8@0+ (1,0) [0|255] "" PAS
+ SG_ PCS_RVMButtonGroup : 50|3@0+ (1,0) [0|7] "" PAS
+ SG_ PCS_LeftBlindSpotViewSt : 51|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_RightBlindSpotViewSt : 52|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_ReturnSt : 53|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_HelpMenuSt : 54|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_SoundReminderSt : 55|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_ACU_DisplayReq : 56|1@0+ (1,0) [0|1] "" TEL,PAS
+ SG_ PCS_ER_EnterConfirm : 57|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_ER_QuitReq : 58|1@0+ (1,0) [0|1] "" PAS
+ SG_ PCS_PASButtonPress : 59|1@0+ (1,0) [0|1] "" TEL,PAS
+ SG_ PCS_MMIAPAConfirmButton : 61|2@0+ (1,0) [0|3] "" TEL,PAS
+ SG_ PCS_MMIAPAFuncSelect : 63|2@0+ (1,0) [0|3] "" TEL,PAS
+
+BO_ 839 PAS_2: 8 IDCU
+ SG_ PAS_FRDistance : 7|8@0+ (2,0) [0|510] "cm" GWM,IFC,TEL,VCU
+ SG_ PAS_FLDistance : 15|8@0+ (2,0) [0|510] "cm" GWM,IFC,TEL,VCU
+ SG_ PAS_FRMidDistance : 23|8@0+ (2,0) [0|510] "cm" GWM,IFC,TEL,VCU
+ SG_ PAS_FLMidDistance : 31|8@0+ (2,0) [0|510] "cm" GWM,IFC,TEL,VCU
+ SG_ PAS_FSRSideDistance : 39|8@0+ (2,0) [0|510] "cm" GWM,IFC,TEL,VCU
+ SG_ PAS_FSLSideDistance : 47|8@0+ (2,0) [0|510] "cm" GWM,IFC,TEL,VCU
+ SG_ PAS_RRMidSnsErrFlag : 48|1@0+ (1,0) [0|1] "" GWM,IFC,TEL,VCU
+ SG_ PAS_RLMidSnsErrFlag : 49|1@0+ (1,0) [0|1] "" GWM,IFC,TEL,VCU
+ SG_ PAS_RRSnsErrFlag : 50|1@0+ (1,0) [0|1] "" GWM,IFC,TEL,VCU
+ SG_ PAS_RLSnsErrFlag : 51|1@0+ (1,0) [0|1] "" GWM,IFC,TEL,VCU
+ SG_ PAS_RSLSnsErrFlag : 52|1@0+ (1,0) [0|1] "" GWM,IFC,TEL,VCU
+ SG_ PAS_RSRSnsErrFlag : 53|1@0+ (1,0) [0|1] "" GWM,IFC,TEL,VCU
+ SG_ PAS_FRSnsErrFlag : 54|1@0+ (1,0) [0|1] "" GWM,IFC,TEL,VCU
+ SG_ PAS_FLSnsErrFlag : 55|1@0+ (1,0) [0|1] "" GWM,IFC,TEL,VCU
+ SG_ PAS_PCS_DisplayReq : 56|1@0+ (1,0) [0|1] "" GWM,IFC,TEL,VCU
+ SG_ PAS_FSLSnsErrFlag : 57|1@0+ (1,0) [0|1] "" GWM,IFC,TEL,VCU
+ SG_ PAS_FSRSnsErrFlag : 58|1@0+ (1,0) [0|1] "" GWM,IFC,TEL,VCU
+ SG_ PAS_FRMidSnsErrFlag : 59|1@0+ (1,0) [0|1] "" GWM,IFC,TEL,VCU
+ SG_ PAS_FLMidSnsErrFlag : 60|1@0+ (1,0) [0|1] "" GWM,IFC,TEL,VCU
+ SG_ PAS_CtrlModulerrFlag : 61|1@0+ (1,0) [0|1] "" GWM,IFC,TEL,VCU
+ SG_ PAS_BattVoltErrFlag : 62|1@0+ (1,0) [0|1] "" GWM,IFC,TEL,VCU
+
+BO_ 858 GW_CDC_ACU_10_A: 8 GWM
+ SG_ ACU_Time_Year : 7|8@0+ (1,2000) [2000|2255] "y" IDCU,IFC,TEL,EPS,IBCS
+ SG_ ACU_Time_Day : 11|5@0+ (1,0) [1|31] "d" IDCU,IFC,TEL,EPS,IBCS
+ SG_ ACU_Time_Month : 15|4@0+ (1,0) [1|12] "m" IDCU,IFC,TEL,EPS,IBCS
+ SG_ ACU_Time_Min : 17|6@0+ (1,0) [0|59] "min" IDCU,IFC,TEL,EPS,IBCS
+ SG_ ACU_Time_Hour : 22|5@0+ (1,0) [0|23] "h" IDCU,IFC,TEL,EPS,IBCS
+ SG_ ACU_Time_Sec : 27|6@0+ (1,0) [0|59] "s" IDCU,IFC,TEL,EPS,IBCS
+ SG_ ACU_LanguageTypeSet : 37|6@0+ (1,0) [0|63] "" IDCU
+ SG_ ACU_ThemeType : 48|1@0+ (1,0) [0|1] "-" IDCU
+ SG_ ACU_RecpLevelSt : 61|3@0+ (1,0) [0|7] "-" IDCU
+
+BO_ 864 VCU_2_A: 8 VCU
+ SG_ VCU_VehCrusSt_A : 7|2@0+ (1,0) [0|3] "-" IBCS
+ SG_ VCU_VehDrvMod_A : 18|3@0+ (1,0) [0|7] "-" GWM,IDCU,IFC,EPS,IBCS
+ SG_ VCU_VehRdySt_A : 22|1@0+ (1,0) [0|1] "-" GWM,IDCU,IFC,EPS,IBCS,PAS
+ SG_ VCU_VehRdySt_Rddy_A : 38|1@0+ (1,0) [0|1] "" GWM,IBCS
+ SG_ VCU_GearLvl_A : 47|4@0+ (1,0) [0|15] "-" IDCU,IFC,IBCS
+
+BO_ 870 EPS_1: 8 EPS
+ SG_ EPS_1_StrngWhlTorqVD : 0|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,PAS
+ SG_ EPS_WarnLamp : 1|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ EPS_1_MsgCounter : 5|4@0+ (1,0) [0|15] "" IDCU,IFC
+ SG_ EPS_PowerStrngIndOn : 6|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPS_SteeringAngleSpdVD : 7|1@0+ (1,0) [0|1] "" IDCU,IFC,TEL
+ SG_ EPS_SteeringAngle : 15|16@0+ (0.1,-780) [-780|779.9] "deg" IDCU,IFC,TEL
+ SG_ EPS_SteeringAngleSpd : 29|8@0+ (4,0) [0|1016] "deg/sec" IDCU,IFC,TEL
+ SG_ EPS_ThermalSt : 31|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ EPS_FunctionStyleSt : 33|2@0+ (1,0) [0|3] "" GWM,IDCU,IFC,TEL
+ SG_ EPS_SteeringAngleVD : 34|1@0+ (1,0) [0|1] "" IDCU,IFC,TEL
+ SG_ EPS_SteeringModeSt : 36|2@0+ (1,0) [0|3] "" IDCU,IFC,TEL
+ SG_ EPS_ElecPowerConsumptionVD : 37|1@0+ (1,0) [0|1] "" TEL
+ SG_ EPS_1_StrngWhlTorq : 47|8@0+ (0.1,-12.7) [-12.7|12.7] "Nm" IDCU,IFC,TEL,PAS
+ SG_ EPS_ElecPowerConsumption : 55|8@0+ (0.5,0) [0|127] "A" TEL
+ SG_ EPS_1_Checksum : 63|8@0+ (1,0) [0|255] "" IDCU,IFC
+
+BO_ 876 IBCS_5_A: 8 IBCS
+ SG_ BCS_FLWheelSpdEdgesSum : 7|12@0+ (1,0) [0|4095] "" GWM,IDCU,IFC,TEL,PAS
+ SG_ BCS_FRWheelSpdEdgesSum : 11|12@0+ (1,0) [0|4095] "" GWM,IDCU,IFC,TEL,PAS
+ SG_ BCS_RLWheelSpdEdgesSum : 31|12@0+ (1,0) [0|4095] "" GWM,IDCU,IFC,TEL,PAS
+ SG_ BCS_RRWheelSpdEdgesSum : 35|12@0+ (1,0) [0|4095] "" GWM,IDCU,IFC,TEL,PAS
+ SG_ BCS_FLWheelSpdEdgesSumVD : 48|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_FRWheelSpdEdgesSumVD : 49|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_RLWheelSpdEdgesSumVD : 50|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_RRWheelSpdEdgesSumVD : 51|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_5_A_MsgCounter : 55|4@0+ (1,0) [0|15] "" GWM,IDCU,IFC,TEL
+ SG_ BCS_5_A_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,IDCU,IFC,TEL
+
+BO_ 880 VCU_14_A: 8 VCU
+ SG_ VCU_VehWheelTorqMax_A : 7|14@0+ (1,0) [0|10000] "Nm" IDCU,IFC,TEL,PAS
+ SG_ VCU_DragModeOffReq : 9|1@0+ (1,0) [0|1] "" IBCS
+ SG_ VCU_stSup_A : 23|8@0+ (1,0) [0|255] "" IDCU,IFC
+ SG_ VCU_EspDrvModReq_A : 26|3@0+ (1,0) [0|7] "" IBCS
+ SG_ EMS_GasPedalActPstforMRRVD_A : 27|1@0+ (1,0) [0|1] "" IDCU,IFC,TEL,IBCS,PAS
+ SG_ VCU_ACCStResp_A : 28|1@0+ (1,0) [0|1] "-" IDCU,IFC
+ SG_ VCU_AccTMCFail_A : 29|1@0+ (1,0) [0|1] "-" IDCU,IFC
+ SG_ VCU_AccElecECFail_A : 30|1@0+ (1,0) [0|1] "-" IDCU,IFC,TEL
+ SG_ VCU_AccDriverOrvd_A : 31|1@0+ (1,0) [0|1] "-" IDCU,IFC,TEL,IBCS
+ SG_ VCU_EMS_ACCButtInfo_A : 39|8@0+ (1,0) [0|255] "" IDCU,IFC,TEL
+ SG_ EMS_GasPedalActPstforMRR_A : 47|8@0+ (0.392,0) [0|99.96] "%" IDCU,IFC,TEL,IBCS,PAS
+ SG_ VCU_14_A_MsgCounter : 51|4@0+ (1,0) [0|15] "-" IDCU,IFC,IBCS,PAS
+ SG_ VCU_14_A_Checksum : 63|8@0+ (1,0) [0|255] "-" IDCU,IFC,IBCS,PAS
+
+BO_ 885 GW_BDC_BCM_2_A: 8 GWM
+ SG_ BCM_LowBeamSt : 0|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_HighBeamSt : 1|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_FrontFogLampSt : 2|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_RearFogLampSt : 3|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_FrontWiperSt : 5|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ BCM_KeyInsertSt : 6|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_ReverseSwitchStVD : 7|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_KeySt : 9|2@0+ (1,0) [0|3] "-" IDCU,IFC,EPS,IBCS,PAS
+ SG_ BCM_DTRLSt : 10|1@0+ (1,0) [0|1] "" IDCU
+ SG_ BCM_BonnetAjarSt : 11|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_RearWiperSt : 12|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_ReverseSwitchSt : 13|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_DriverDoorAjarSt : 14|1@0+ (1,0) [0|1] "-" IDCU,IFC,IBCS,PAS
+ SG_ BCM_BrakeLightSwitchSt : 15|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_TrunkAjarSt : 16|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ BCM_PsngrDoorAjarSt : 17|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ BCM_RLDoorAjarSt : 18|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ BCM_RRDoorAjarSt : 19|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ BCM_IG1RelaySt : 20|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_DRLLFaultSt : 21|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_FrontWasherSt : 22|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_RearWasherSt : 23|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_RoomlampSt : 24|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_DRLRFaultSt : 25|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_TurnLightSwitchSt : 27|2@0+ (1,0) [0|3] "" IDCU,IFC,PAS
+ SG_ BCM_BrakeLightFaultSt : 28|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_PositionLightswitchSt : 29|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_PositionLightFaultSt : 30|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_LowBeamFaultSt : 31|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_PGearSt : 32|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_LeftTurnLampSt : 33|1@0+ (1,0) [0|1] "" IDCU,IFC,TEL
+ SG_ BCM_LeftTurnLampFaultSt : 34|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_RightTurnLampSt : 35|1@0+ (1,0) [0|1] "" IDCU,IFC,TEL
+ SG_ BCM_RightTurnLampFaultSt : 36|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_ParkingLampSt : 37|1@0+ (1,0) [0|1] "" IDCU
+ SG_ BCM_TransportModeSt : 38|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_VehReverseSt : 39|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_ATWS_St : 42|3@0+ (1,0) [0|7] "" IDCU
+ SG_ BCM_AutoLightCtrlSt : 43|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_BeamSwitchSt : 45|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ BCM_MainLampSWSt : 47|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ BCM_BCAN_2_MsgCounter : 51|4@0+ (1,0) [0|15] "" IDCU,IFC,PAS
+ SG_ BCM_DriverDoorLockSt : 52|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ BCM_PsngrDoorLockSt : 53|1@0+ (1,0) [0|1] "" IDCU,IFC,PAS
+ SG_ BCM_InteriorTrunkReleaseSwitchSt : 54|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_CentralLockSWSt : 55|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_BCAN_2_Checksum : 63|8@0+ (1,0) [0|255] "" IDCU,IFC,PAS
+
+BO_ 886 IBCS_18_A: 8 IBCS
+ SG_ ESP_RecpLevelstResp : 2|3@0+ (1,0) [0|7] "-" GWM
+ SG_ BCS_BrkPedalStyle : 3|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC
+ SG_ BCS_ESPFuncResp : 5|2@0+ (1,0) [0|3] "" GWM
+ SG_ BCS_HDCFuncResp : 7|2@0+ (1,0) [0|3] "" GWM
+ SG_ BCS_TPMSResetSt : 9|2@0+ (1,0) [0|3] "" GWM
+ SG_ BCS_TPMSWarningLamp : 10|1@0+ (1,0) [0|1] "" GWM
+ SG_ BCS_TPMSSysErrorSt : 11|1@0+ (1,0) [0|1] "" GWM
+ SG_ BCS_TPMSFLTyrePreWarn : 12|1@0+ (1,0) [0|1] "" GWM
+ SG_ BCS_TPMSFRTyrePreWarn : 13|1@0+ (1,0) [0|1] "" GWM
+ SG_ BCS_AVHSoftSwctrlst : 15|2@0+ (1,0) [0|3] "-" GWM
+ SG_ BCS_CSTFuncResp : 19|2@0+ (1,0) [0|3] "" GWM
+ SG_ BCS_BrkPedalStyleVD : 21|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC
+ SG_ BCS_TPMSRLTyrePreWarn : 22|1@0+ (1,0) [0|1] "" GWM
+ SG_ BCS_TPMSRRTyrePreWarn : 23|1@0+ (1,0) [0|1] "" GWM
+ SG_ BCS_18_A_MsgCounter : 51|4@0+ (1,0) [0|15] "" GWM
+ SG_ BCS_18_A_Checksum : 63|8@0+ (1,0) [0|255] "" GWM
+
+BO_ 913 ADAS_19: 8 IFC
+ SG_ ADAS_NOA_reserved : 7|64@0+ (1,0) [0|0] "" GWM
+
+BO_ 914 GW_BDC_BCM_1_A: 8 GWM
+ SG_ BCM_HazardLampSt : 0|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_ReverseLightSt : 1|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ BCM_BrakeLightSt : 2|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_HazardLampSwitchSt : 3|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_FrontWiperSwitchSt : 5|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ BCM_RearLeftDoorLockSt : 6|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ BCM_RearRightDoorLockSt : 7|1@0+ (1,0) [0|1] "" IDCU,IFC
+ SG_ CDC_Tel_WatcherOnVD : 8|1@0+ (1,0) [0|1] "" IDCU
+ SG_ CDC_Tel_WatcherOnReadySt : 9|1@0+ (1,0) [0|1] "" IDCU
+ SG_ CDC_Tel_RealTimeVedio : 11|2@0+ (1,0) [0|3] "" IDCU
+ SG_ LCM_SPAModeSetSt : 14|3@0+ (1,0) [0|7] "" IDCU,IFC
+ SG_ BCM_LCMFuncCfgSt : 15|1@0+ (1,0) [0|1] "" IDCU,IFC
+
+BO_ 919 IBCS_EPB_1_A: 8 IBCS
+ SG_ EPB_SwitchSt : 1|2@0+ (1,0) [0|3] "" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ EPB_SwitchStVD : 2|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ EPB_ExtAvailable : 4|2@0+ (1,0) [0|3] "" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ EPB_ActuatorSt_L : 7|3@0+ (1,0) [0|7] "" GWM,TEL,PAS,VCU
+ SG_ EPB_SysSt : 10|3@0+ (1,0) [0|7] "" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ EPB_AchievedClampForce : 15|5@0+ (1,0) [0|31] "kN" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ EPB_MotorCurrent_L : 23|10@0+ (0.1,-51.1) [-51.1|51.1] "A" GWM,TEL,PAS
+ SG_ EPB_DynamicApplySt : 29|3@0+ (1,0) [0|7] "" GWM,TEL,PAS,VCU
+ SG_ EPB_MotorCurrent_R : 36|10@0+ (0.1,-51.1) [-51.1|51.1] "A" GWM,TEL,PAS
+ SG_ EPB_CruiseCtrlCancelReq : 37|1@0+ (1,0) [0|1] "" GWM,TEL,PAS,VCU
+ SG_ EPB_CruiseCtrlCancelReqVD : 38|1@0+ (1,0) [0|1] "" GWM,TEL,PAS
+ SG_ EPB_ActuatorSt_R : 42|3@0+ (1,0) [0|7] "" GWM,TEL,PAS,VCU
+ SG_ BCS_EPB_1_A_MsgCounter : 51|4@0+ (1,0) [0|15] "" GWM,IDCU,IFC,TEL,PAS
+ SG_ EPB_TMMCtrlCmd : 52|1@0+ (1,0) [0|1] "" GWM,TEL,PAS
+ SG_ EPB_FailSt : 55|1@0+ (1,0) [0|1] "" GWM,IDCU,IFC,TEL,PAS,VCU
+ SG_ BCS_EPB_1_A_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,IDCU,IFC,TEL,PAS
+
+BO_ 926 TEL_3_E_A: 8 TEL
+ SG_ TEL_Time_Year : 7|8@0+ (1,2000) [2000|2255] "y" Vector__XXX
+ SG_ TEL_Time_Day : 11|5@0+ (1,0) [1|31] "d" Vector__XXX
+ SG_ TEL_Time_Month : 15|4@0+ (1,0) [1|12] "m" Vector__XXX
+ SG_ TEL_Time_Min : 17|6@0+ (1,0) [0|59] "min" Vector__XXX
+ SG_ TEL_Time_Hour : 22|5@0+ (1,0) [0|23] "h" Vector__XXX
+ SG_ TEL_Time_Sec : 27|6@0+ (1,0) [0|59] "s" Vector__XXX
+ SG_ TEL_TimeVD : 34|1@0+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 931 ADAS_1: 8 IDCU
+ SG_ ADAS_NOAOpeButtonSt : 2|3@0+ (1,0) [0|7] "" GWM,TEL
+ SG_ ADAS_NOAModeIndex : 6|4@0+ (1,0) [0|15] "" GWM
+ SG_ ADAS_1_MsgCounter : 19|4@0+ (1,0) [0|15] "" GWM,TEL
+ SG_ ADAS_HMA_WorkSt : 47|3@0+ (1,0) [0|7] "" GWM,TEL
+ SG_ ADAS_HMA_LightRequestSt : 48|1@0+ (1,0) [0|1] "" GWM,TEL
+ SG_ ADAS_1_Checksum : 63|8@0+ (1,0) [0|255] "" GWM,TEL
+
+BO_ 934 ADAS_17: 8 IDCU
+ SG_ ADAS_LLnMrkingPolyCoeffA1 : 7|11@0+ (0.001,-1.023) [-1.023|1.023] "rad" GWM,TEL,VCU
+ SG_ ADAS_LLnMrkingPolyCoeffA2 : 12|11@0+ (1e-05,-0.01023) [-0.01023|0.01023] "1/m" GWM,TEL,VCU
+ SG_ ADAS_RLnMrkingPolyCoeffA0 : 17|11@0+ (0.01,-10.23) [-10.23|10.23] "m" GWM,TEL,VCU
+ SG_ ADAS_RLnMrkingPolyCoeffA1 : 38|11@0+ (0.001,-1.023) [-1.023|1.023] "rad" GWM,TEL,VCU
+ SG_ ADAS_RLnMrkingPolyCoeffA2 : 43|11@0+ (1e-05,-0.01023) [-0.01023|0.01023] "1/m" GWM,TEL,VCU
+ SG_ ADAS_AEBTTC : 48|9@0+ (0.01,0) [0|5.11] "s" GWM,TEL,VCU
+
+BO_ 939 VCU_SRS_A: 8 VCU
+ SG_ VCU_SRS_PsngrSeatBeltSt : 1|2@0+ (1,0) [0|3] "" IDCU,IFC
+ SG_ VCU_SRS_DriverSeatBeltSt : 3|2@0+ (1,0) [0|3] "" IDCU,IFC,IBCS
+ SG_ VCU_SRS_RearLeftSeatBeltSt : 5|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCU_SRS_AirbagFaultSt : 6|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCU_SRS_RearRightSeatBeltSt : 9|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCU_SRS_RearMiddleSeatBeltSt : 14|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCU_SRS_2_MsgCounter : 51|4@0+ (1,0) [0|15] "-" IDCU,IFC,IBCS
+ SG_ VCU_SRS_2_Checksum : 63|8@0+ (1,0) [0|255] "-" IDCU,IFC,IBCS
+

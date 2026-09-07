@@ -2,6 +2,7 @@ from typing import NamedTuple
 
 from opendbc.car.chrysler.values import CAR as CHRYSLER
 from opendbc.car.gm.values import CAR as GM
+from opendbc.car.gwm.values import CAR as GWM
 from opendbc.car.ford.values import CAR as FORD
 from opendbc.car.honda.values import CAR as HONDA
 from opendbc.car.hyundai.values import CAR as HYUNDAI
@@ -39,6 +40,7 @@ non_tested_cars = [
   HYUNDAI.GENESIS_G70_2021_NON_SCC,
   HONDA.HONDA_CLARITY,
   TOYOTA.TOYOTA_WILDLANDER,
+  GWM.GWM_V09_EV,  # no test route yet
 ]
 
 
