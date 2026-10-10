@@ -142,4 +142,4 @@ class CarControlSP:
 
 @auto_dataclass
 class CarStateSP:
-  pass
+  lateralOverridePaused: bool = auto_field()
