@@ -3,9 +3,17 @@ from opendbc.car import Bus, structs
 from opendbc.car.interfaces import CarStateBase
 from opendbc.car.common.conversions import Conversions as CV
 from opendbc.car.volkswagen.values import DBC, CanBus, NetworkLocation, TransmissionType, GearShifter, \
-                                                      CarControllerParams, VolkswagenFlags
+                                                      CarControllerParams, VolkswagenFlags, CAR
 
 ButtonType = structs.CarState.ButtonEvent.Type
+
+# 大众 EPS 只有在持续上报 FAULT 达到该帧数后，才会被判定为永久故障（更新频率 100Hz）。
+# 实测 MQB 帕萨特 B8 上 EPS 的 FAULT / REJECTED 事件约持续 2.0~2.1s 后转向柱即恢复 ready，
+# 因此任何短于该时长的故障都不应触发永久的 "LKAS Fault: Restart the Car" 误报。
+HCA_FAULT_PERSIST_FRAMES = 300  # 3.0s
+
+# 帕萨特驾驶员接管：手动转向时暂停 HCA，松开方向盘后再稳定该帧数（100Hz，约 0.5s）才恢复，避免抖动。
+PASSAT_OVERRIDE_RELEASE_FRAMES = 50
 
 
 class CarState(CarStateBase):
@@ -14,6 +22,10 @@ class CarState(CarStateBase):
     self.frame = 0
     self.eps_init_complete = False
     self.tsk_recovery_timer = 0
+    self.hca_fault_frames = 0
+    # 帕萨特驾驶员接管（手动转向暂停横向控制）状态
+    self.lateral_override_paused = False
+    self.override_release_frames = 0
     self.CCP = CarControllerParams(CP)
     self.button_states = {button.event_type: False for button in self.CCP.BUTTONS}
     self.esp_hold_confirmation = False
@@ -143,6 +155,8 @@ class CarState(CarStateBase):
 
     ret.lowSpeedAlert = self.update_low_speed_alert(ret.vEgo)
 
+    ret_sp.lateralOverridePaused = self.update_lateral_override(ret)
+
     self.frame += 1
     return ret, ret_sp
 
@@ -233,6 +247,8 @@ class CarState(CarStateBase):
     ret.espDisabled = bool(pt_cp.vl["Bremse_1"]["BR1_ESPASR_passive"])
 
     ret.lowSpeedAlert = self.update_low_speed_alert(ret.vEgo)
+
+    ret_sp.lateralOverridePaused = self.update_lateral_override(ret)
 
     self.frame += 1
     return ret, ret_sp
@@ -378,6 +394,25 @@ class CarState(CarStateBase):
     self.frame += 1
     return ret, ret_sp
 
+  def update_lateral_override(self, ret: structs.CarState) -> bool:
+    # 仅帕萨特：驾驶员手动转向时暂停横向控制（交由驾驶员控制），松开方向盘并稳定一段时间后允许恢复。
+    # 该状态通过 CarStateSP 同步到 HUD，并由 CarController 用于实际撤销 HCA 输出。
+    if self.CP.carFingerprint == CAR.VOLKSWAGEN_PASSAT_MK8:
+      if ret.steeringPressed:
+        # 检测到驾驶员手动转向，立即进入接管状态并清零恢复计时
+        self.lateral_override_paused = True
+        self.override_release_frames = 0
+      elif self.lateral_override_paused:
+        # 驾驶员已松开方向盘，累计稳定帧数，超过阈值后允许恢复
+        self.override_release_frames += 1
+        if self.override_release_frames > PASSAT_OVERRIDE_RELEASE_FRAMES:
+          self.lateral_override_paused = False
+    else:
+      # 非帕萨特时始终复位
+      self.lateral_override_paused = False
+      self.override_release_frames = 0
+    return self.lateral_override_paused
+
   def update_low_speed_alert(self, v_ego: float) -> bool:
     # Low speed steer alert hysteresis logic
     if (self.CP.minSteerSpeed - 1e-3) > CarControllerParams.DEFAULT_MIN_STEER_SPEED and v_ego < (self.CP.minSteerSpeed + 1.):
@@ -399,8 +434,18 @@ class CarState(CarStateBase):
     # Treat FAULT as temporary for worst likely EPS recovery time, for cars without factory Lane Assist
     # DISABLED means the EPS hasn't been configured to support Lane Assist
     self.eps_init_complete = self.eps_init_complete or (hca_status in ("DISABLED", "READY", "ACTIVE") or self.frame > 600)
-    perm_fault = in_drive and hca_status == "DISABLED" or (self.eps_init_complete and hca_status == "FAULT")
-    temp_fault = in_drive and hca_status in ("REJECTED", "PREEMPTED") or not self.eps_init_complete
+    # VW EPS 转向柱会持续上报数秒的 "FAULT"（实测 0.03s~2.1s），随后自行恢复到 "ready"，
+    # 通常发生在 HCA 激活时驾驶员手动转向的情况下。若直接锁定为永久故障，会硬性禁用 openpilot
+    # 并弹出 "LKAS Fault: Restart the Car"，因此要求故障持续足够久才升级为永久故障。
+    # 瞬时故障仍按临时故障处理，立即软禁用横向控制（反应时间相同，只是不再弹永久告警）。
+    if hca_status == "FAULT":
+      self.hca_fault_frames += 1
+    else:
+      self.hca_fault_frames = 0
+    persistent_fault = self.hca_fault_frames > HCA_FAULT_PERSIST_FRAMES
+
+    perm_fault = (in_drive and hca_status == "DISABLED") or (self.eps_init_complete and persistent_fault)
+    temp_fault = (in_drive and hca_status in ("REJECTED", "PREEMPTED")) or hca_status == "FAULT" or not self.eps_init_complete
     return temp_fault, perm_fault
 
   def update_acc_fault(self, acc_fault, engine_off, long_inhibit, recovery_frames=10):

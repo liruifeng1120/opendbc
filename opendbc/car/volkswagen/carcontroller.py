@@ -67,6 +67,9 @@ class CarController(CarControllerBase):
 
     # **** Steering Controls ************************************************ #
 
+    # 帕萨特驾驶员接管状态：由 CarState 计算（手动转向即暂停 HCA，松开并稳定约 0.5s 后恢复）
+    driver_override = bool(getattr(CS, "lateral_override_paused", False))
+
     if self.frame % self.CCP.STEER_STEP == 0:
       apply_torque = 0
       if self.CP.flags & VolkswagenFlags.MEB:
@@ -104,7 +107,8 @@ class CarController(CarControllerBase):
         self.steering_power_last = steering_power
 
       else:
-        if CC.latActive:
+        # 帕萨特驾驶员接管暂停期间不输出扭矩，apply_torque 保持 0 以撤销 HCA
+        if CC.latActive and not driver_override:
           new_torque = int(round(actuators.torque * self.CCP.STEER_MAX))
           apply_torque = apply_driver_steer_torque_limits(new_torque, self.apply_torque_last, CS.out.steeringTorque, self.CCP)
 
@@ -165,7 +169,9 @@ class CarController(CarControllerBase):
       hud_alert = 0
       if hud_control.visualAlert in (VisualAlert.steerRequired, VisualAlert.ldw):
         hud_alert = self.CCP.LDW_MESSAGES["laneAssistTakeOver"]
-      can_sends.append(self.CCS.create_lka_hud_control(self.packer_pt, self.CAN.pt, CS.ldw_stock_values, CC.latActive,
+      # 仪表 LKA 指示灯：驾驶员接管暂停期间视为横向未激活，指示灯随之熄灭
+      can_sends.append(self.CCS.create_lka_hud_control(self.packer_pt, self.CAN.pt, CS.ldw_stock_values,
+                                                       CC.latActive and not driver_override,
                                                        CS.out.steeringPressed, hud_alert, hud_control))
 
     if hud_control.leadDistanceBars != self.lead_distance_bars_last:
